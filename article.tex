@@ -154,7 +154,7 @@ The parallel component of the hyperfine interaction can be obtained from the res
 The perpendicular part of hyperfine interaction can be obtained from a fit to the Lorentzian dip with the width of $\frac{(s_1-s_0)\omega_L A_{zx}}{(2p+1)\pi\omega_0 \omega_1}$ or varying the number of pulses and fitting the minima position to the formula $\expval{\sigma_z}_{DD}^{(k)} \approx 1- 2 \sin^2\big(\frac{N}{2}\frac{(s_1-s_0)\omega_L A_{zx}}{\omega_0 \omega_1}\big) $. Although Dynamical Decoupling (DD) sequence is well understood and used to characterize nuclear spins, it is not applicable for any system. First, DD only works for defects with high magnetic field and low hyperfine coupling ($\omega_L \gg A_{zz}, A_{zx}$). Second, the signal is limited to electron spin $T_2$, which is difficult to make it equal to $T_1$. Third, the signal analysis is rather complicated and time-consuming. (Maybe AI solves this problem in the future?) one has to collect enough data to make sure no two nuclear spin overlap in the signal. Forth, this sequence does not work for spin one half system, e.g., group IV defect in diamond, since parallel component of hyperfine coupling cancels their effect in the resonance time up to the first and second order. Hence, the resonance time depends on the second order of perpendicular component. In this work, we take 23 nuclear spin characterized in paper \cite{abobeih2019atomic} as a realistic case. 
 \begin{figure*}[htbp]
 	\begin{center}
-		\includegraphics[width=0.8\textwidth]{pict/dd_compare.pdf}
+		\includegraphics[width=0.8\textwidth]{pict/dd_compare2.pdf}
 		\caption{a. DD for NV in diamond b. DD for group IV defect in diamond }
 		\label{fig:3}
 	\end{center}
@@ -180,7 +180,7 @@ Assuming the typical values of $T_2^{HE} = 100 $ $\mu$s, a nuclear spin can be d
 We want to make a sequence that is limited by T1 instead of T2. The idea of 5-pulse ESEEM \cite{kasumaj20085} is that to create an entanglement (Hahn-echo) before the free evolution (Ramsey). In other words, change the initial density matrix for the Ramsey sequence from such that entanglement already exist in the electron polarization terms of the density matrix. Fig \ref{fig:seqs} shows the sequence, which can be interpreted as two Hahn Echos that are separated by a long free evolution $T\gg T_2^\ast$ such that the coherence of the electron spin vanishes. The analytical formula to this sequence is provided in the appendix \ref{app:5pESEEM}. During the free evolution time, each nuclear spins oscillates with either of two resonance frequencies obtained from eq. \ref{eq:H}.
 \begin{figure*}[htbp]
 	\begin{center}
-		\includegraphics[width=0.9\textwidth]{pict/eseem_compare.pdf}
+		\includegraphics[width=0.9\textwidth]{pict/eseem_compare2.pdf}
 		\caption{a. FFT of ESEEM signal b. a zoom into weakly coupled nuclear spins c. Enhancing weakly coupled nuclear spins by having 72 pulses in each entangling period. $\tau$ is set to the Larmor bright spot.}
 		\label{fig:4}
 	\end{center}
