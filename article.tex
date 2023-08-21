@@ -59,7 +59,7 @@ superscriptaddress,
 
 \preprint{APS/123-QED}
 
-\title{Blueprint for nuclear spin characterization in  color center}% Force line breaks with \\
+\title{Blueprint for efficient nuclear spin characterization in  color center}% Force line breaks with \\
 %\thanks{A footnote to the article title}%
 
 \author{Majid Zahedian}
@@ -82,7 +82,10 @@ superscriptaddress,
              %  but any date may be explicitly specified
 
 \begin{abstract}
-Color centers are one of the promising platform for implementing quantum applications, using the nuclear spins around the electron spin as qubits with relatively long coherence time. However, characterizing each nuclear spin is quite cumbersome as the characterization protocol may differ depending on the strength of the hyperfine coupling. Here, we present a more straight forward method to obtain hyperfine interaction among nuclear spins and the electron spin. This method can be used for a variety of platform including group IV defects in diamond or Silicon vacancy in Silicon Carbide.
+Nuclear spins in solids is one of the most promising platforms for realisation of a scalable quantum hardware. They could be efficiently adressed at single site level by nearby single colour centers via the spin resonance. However, characterising each nuclear spin is quite cumbersome as the characterisation protocol may differ depending on the strength of the hyperfine coupling. The most adopted protocol is modified electron spin Hahn-echos such as CPMG and XY8 pulse sequences. In some cases, e.g. for spin 1/2, strongly coupled spins, and bispecies bath this protocol contains severe problems in applying for the nuclear spin bath characterisation. 
+Here, we present a more straight forward method to obtain hyperfine interaction among nuclear spins and the electron spin. 
+This method can be used for a variety of platform including emerging S=1/2 group IV defects in diamond (e.g. SiV, GeV, SnV, PbV) or Silicon vacancy in Silicon Carbide.
+We summarize theoretical framework and adopt it from ESR for the use in colour centers with various spins, and numerically consider case of nuclear spin cluster, as compare performance of various protocols on this example via the Fisher information matrix. 
 \end{abstract}
 
 %\keywords{Suggested keywords}%Use showkeys class option if keyword
@@ -90,7 +93,13 @@ Color centers are one of the promising platform for implementing quantum applica
 \maketitle
 %\tableofcontents
 \section{Introduction and background}
-Optically active defects in solids, color centers, has been applied for realizing different quantum applications \cite{awschalom2018quantum}, such as a quantum network \cite{pompili2021realization}, quantum sensing \cite{degen2017quantum}, and quantum register \cite{bradley2019ten}. Each center contains an electron spin that can be controlled directly with microwaves and optics and many nuclear spins that can be manipulated through the electron spin. Characterizing nuclear spins is necessary for enlarging the quantum register and precise description of the electron spin dynamics. Traditionally, nuclear spin characterization is done with Opticall Detected Magnetic Resonance (ODMR) (ref to Phillip Neumann's works), however the spectroscopic resolution is limited to the $T_2^\ast$ of the electron spin. Hence, some sequence is needed to increase the resolution. People have used Hahn Echo sequence to refocus the electron spin and enhance the coherence time of the electron spin \cite{childress2006coherent}. But this method only works for defects with a specific nuclear spins configuration. Depending on the applied protocol for nuclear spins characterization, the number of accessible nuclear spin can increase. Electron Spin Echo Envelop Modulation (ESEEM) types of sequences allow us to access the highest number of nuclear spins since the spectroscopy resolution is limited to the longitudinal relaxation time (T1) of the system (see fig. \ref{fig:1}). 
+Optically active defects in solids, color centers, has been applied for realising different quantum applications \cite{awschalom2018quantum}, such as a quantum network \cite{pompili2021realization}, quantum sensing \cite{degen2017quantum}, and quantum registers \cite{bradley2019ten}. 
+Each center contains an electron spin that can be controlled directly with microwaves, aligned and read via optics. 
+The key element for most applications is that they could be coupled through the hyperfine coupling to the bath of numerous nuclear spins presenting a long living quantum memories and could present a nuclear spin qubit register. 
+To design the efficient quantum control for the memories, a precise knowledge of the full hamiltonian of the register needs to be known and characterised before. 
+However, characterising the nuclear spin hyperfine coupling could be a challenge and a lengthy procedure. 
+
+is necessary for enlarging the quantum register and precise description of the electron spin dynamics. Traditionally, nuclear spin characterisation is done with Optically Detected Magnetic Resonance (ODMR) (ref to Phillip Neumann's works), however the spectroscopic resolution is limited to the $T_2^\ast$ of the electron spin. Hence, some sequence is needed to increase the resolution. People have used Hahn Echo sequence to refocus the electron spin and enhance the coherence time of the electron spin \cite{childress2006coherent}. But this method only works for defects with a specific nuclear spins configuration. Depending on the applied protocol for nuclear spins characterization, the number of accessible nuclear spin can increase. Electron Spin Echo Envelop Modulation (ESEEM) types of sequences allow us to access the highest number of nuclear spins since the spectroscopy resolution is limited to the longitudinal relaxation time ($T_1$) of the system (see fig. \ref{fig:1}). 
 \begin{figure*}%[htbp]
 	\begin{center}
 		\includegraphics[width=0.7\textwidth]{pict/drawing0.pdf}
