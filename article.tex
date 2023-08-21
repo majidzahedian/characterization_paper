@@ -118,13 +118,7 @@ Where $\Delta = \omega_a - \omega_{mw}$ is the detuning, $\omega_L^{(k)} =\gamma
 	\textcolor{gray}{e^{-\frac{\tau}{T_2^\ast}}}
 \end{gather} 
 We do not take any relaxation process into account and the gray exponential decay is put by hand to remember the relaxation time scale. Ramsey signal decay with electron spin $T_2^\ast$, so it can be used to observe the core of the defect. Ramsey sequence is sensitive to detuning since the electron spin is not refocused, however it is possible to sense nuclear spins with vanishing perpendicular hyperfine coupling.\\
-\begin{figure}%[htbp]
-	\begin{center}
-		\includegraphics[width=0.9\columnwidth]{pict/seqs.png}
-		\caption{Pulse sequences a. Ramsey b. Hahn Echo c. Dynamical Decoupling d. DDESEEM}
-		\label{fig:seqs}
-	\end{center}
-\end{figure} 
+
 To enhance the relaxation time and have access to more nuclei, one can add a $\pi$ pulse in between the Ramsey sequence and create Hahn-echo sequence and obtain the following signal:
 \begin{gather}
 	\expval{\sigma_z}_{HE} = \prod_{j=1}^n \Big[1 - 2 k^2 
@@ -169,13 +163,6 @@ If we assume the typical values of $T_2^{HE} = 100 $ $\mu$s and $\omega_L=500 $ 
 \end{gather}
 Assuming the typical values of $T_2^{HE} = 100 $ $\mu$s, a nuclear spin can be distinguished from another one if their transverse hyperfine coupling is separated by $\delta A_{zx} = 80$ kHz, which is quite inaccurate.\\
 
-\begin{figure*}[htbp]
-	\begin{center}
-		\includegraphics[width=0.8\textwidth]{pict/Fisher.pdf}
-		\caption{a. DD spin 1 b. DD spin 1/2 c. 5pESEEM spin 1 d. 5pESEEM spin 1/2 }
-		\label{fig:Fisher}
-	\end{center}
-\end{figure*}
    
 We want to make a sequence that is limited by T1 instead of T2. The idea of 5-pulse ESEEM \cite{kasumaj20085} is that to create an entanglement (Hahn-echo) before the free evolution (Ramsey). In other words, change the initial density matrix for the Ramsey sequence from such that entanglement already exist in the electron polarization terms of the density matrix. Fig \ref{fig:seqs} shows the sequence, which can be interpreted as two Hahn Echos that are separated by a long free evolution $T\gg T_2^\ast$ such that the coherence of the electron spin vanishes. The analytical formula to this sequence is provided in the appendix \ref{app:5pESEEM}. During the free evolution time, each nuclear spins oscillates with either of two resonance frequencies obtained from eq. \ref{eq:H}.
 \begin{figure*}[htbp]
@@ -212,6 +199,15 @@ We acknowledge financial support by European Union's Horizon 2020 research and i
 \appendix
 %%%%%%%%%%%%%=========
 \section{5pESEEM formula}
+
+Here are the sequences:
+\begin{figure}%[htbp]
+	\begin{center}
+		\includegraphics[width=0.9\columnwidth]{pict/seqs.png}
+		\caption{Pulse sequences a. Ramsey b. Hahn Echo c. Dynamical Decoupling d. DDESEEM}
+		\label{fig:seqs}
+	\end{center}
+\end{figure} 
 \label{app:5pESEEM}
 Here we need to define a few unitary operators/ The evolution in the first Hahn-echo is given by V operators, the middle free evolution is given by F operators, and the second Hahn-echo is given by W operators:
 \begin{gather}
