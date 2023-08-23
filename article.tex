@@ -174,13 +174,21 @@ Assuming the typical values of $T_2^{HE} = 100 $ $\mu$s, a nuclear spin can be d
 
    
 We want to make a sequence that is limited by T1 instead of T2. The idea of 5-pulse ESEEM \cite{kasumaj20085} is that to create an entanglement (Hahn-echo) before the free evolution (Ramsey). In other words, change the initial density matrix for the Ramsey sequence from such that entanglement already exist in the electron polarization terms of the density matrix. Fig \ref{fig:seqs} shows the sequence, which can be interpreted as two Hahn Echos that are separated by a long free evolution $T\gg T_2^\ast$ such that the coherence of the electron spin vanishes. The analytical formula to this sequence is provided in the appendix \ref{app:5pESEEM}. During the free evolution time, each nuclear spins oscillates with either of two resonance frequencies obtained from eq. \ref{eq:H}.
+<<<<<<< HEAD
 \begin{figure*}[htbp]
+=======
+\begin{figure}[htbp]
+>>>>>>> parent of f38a28f (work on the text)
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{pict/eseem_compare2.pdf}
 		\caption{Simulated FFT of ESEEM signal with a zoom into weakly coupled nuclear spins for the register reported \cite{abobeih2019atomic} assuming the electron spin is one-half. b. Enhancing the sensitivity to weakly coupled spins by increasing number of $\pi$-pulses to $N=72$ pulses in each entangling period. $\tau$ is set to the Larmor bright spot. Simulated Fisher information for the case of the electron spin c. one d. one-half system.}
 		\label{fig:4}
 	\end{center}
+<<<<<<< HEAD
 \end{figure*}
+=======
+\end{figure}
+>>>>>>> parent of f38a28f (work on the text)
 Fig \ref{fig:4} shows the furrier transform of the signal. Zooming into area close to the Larmor frequency reveals the weakly coupled nuclei. Each nuclear spins have two peaks in the spectrum. Expanding the resonance frequencies up to first order with respect to hyperfine coupling results that the weakly coupled nuclei keep their order as they go further away from the nuclei. This fact makes their characterization rather straight forward. To observe the weakly coupled nuclei more pronouncedly, one can use DDESEEM sequence by adding more $\pi$ pulses in the entangling periods. To distinguish other nuclei, extra measurements is required. One method is to use two dimensional hyperfine correlation spectroscopy (2D Hyscore)  \cite{vorobyov2022addressing}. However, this method is rather time-consuming as two time variables has to be swept. We suggest sweeping $\tau$ parameter and keep the track of frequency amplitude as a function of $\tau$. Two frequencies that belong to the same nuclear are correlated because the modulation depth oscillates with blind spot terms of both frequencies $\sin^2(\frac{\omega_0 \tau}{2}) \sin^2(\frac{\omega_1 \tau}{2})$. Fig. \ref{fig:5} shows two frequencies goes to bright and blind spots simultaneously. Hence, taking two dimensional correlation of the spectrum, one can deduce which two frequencies are correlated and belong to the same nuclear. \\
 
 Here, we try to simulate the realistic situation. First, the electron spin state is projected to 0 and 1 with a binomial distribution, the probability determined by the theoretical signal. Then, we assume the bright (dark) state emits 3 (0.1) photons on average with a Poissonian distribution. We repeat the measurement at each point for 10000 times to reduce classical noise.\\
