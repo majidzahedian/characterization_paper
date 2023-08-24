@@ -135,21 +135,26 @@ To enhance the relaxation time and have access to more nuclei, one can add a $\p
 \end{gather}
 Where $k = \frac{(s_1-s_0)\omega_L A_{zx}}{\omega_0 \omega_1}$ is the modulation amplitude of each nuclear spin. We know that without any nuclear spin, Hahn Echo sequence creates the electron spin echo signal with the envelope of exponential decay with $T_2^{HE}$. However in the presence of nuclear spins, the electron spin echo envelope will be modulated due to interaction with nuclei. Hence, this sequence also called Electron Spin Echo Envelope Modulation or shortly ESEEM. Even though the coherence time is increased, distinguishing the effect of different nuclear spins in the total signal is very complicated. Hahn Echo sequence can be used for defects that contain a few strongly coupled nuclei. In order to differentiate the resonance frequency of each nuclear spin or make the oscillation sharper, one has to add more $\pi$ pulses and for the so-called Dynamical Decoupling sequence:
 Finally, the signal for dynamical decoupling is obtained:
+\small 
 \begin{gather}
 	\expval{\sigma_z}_{DD} =
 	\prod_{j=1}^n \Big[1- 2 k^2  
 	\sin^2(\frac{\omega_0 \tau}{2}) \sin^2(\frac{\omega_1 \tau}{2}) \frac{\sin^2(\frac{N}{2} \theta)}{\cos^2(\frac{1}{2}\theta)}  \Big]^{(j)} \textcolor{gray}{ e^{-\frac{2N\tau}{T_2(N)}}} 
 \end{gather}
+\normalsize
 Where
 \begin{gather}
 	\theta=  \arccos\Big[\cos(\omega_0 \tau) \cos(\omega_1 \tau)- \vec{n}_0 \cdot \vec{n}_1 sin(\omega_0 \tau) \sin(\omega_1 \tau) \Big]
 \end{gather}
 $\vec{n}_0 \cdot \vec{n}_1 = \frac{\omega_L^2+(s_0+s_1)A_{zz}+s_0 s_1 (A_{zz}^2+A_{zx}^2)}{\omega_0 \omega_1}$ and $N$ is the number of $\pi$ pulses that must be an even. Each nuclear 
 If the magnetic field is high or all nuclear spins are weakly coupled such that $\omega_L \gg A_{zz}, A_{zx}$, the multiplication rule can be approximated by a summation rule, which makes the higher order resonance disappear:
+\small
 \begin{gather}
 	\expval{\sigma_z}_{DD} \approx 1 -2
-	\sum_{j=1}^n \Big[ k^2 	 \sin^2(\frac{\omega_0 \tau}{2}) \sin^2(\frac{\omega_1 \tau}{2}) \frac{\sin^2(\frac{N}{2} \theta)}{\cos^2(\frac{1}{2}\theta)}  \Big]^{(j)} \textcolor{gray}{ e^{-\frac{2N\tau}{T_2(N)}}} 
+	\sum_{j=1}^n \Big[ k^2 	 \sin^2(\frac{\omega_0 \tau}{2}) \sin^2(\frac{\omega_1 \tau}{2}) \frac{\sin^2(\frac{N}{2} \theta)}{\cos^2(\frac{1}{2}\theta)}  \Big]^{(j)} \textcolor{gray}{ e^{-\frac{2N\tau}{T_2(N)}}}
+	\label{eq:approx_DD}
 \end{gather}
+\normalsize
 The parallel component of the hyperfine interaction can be obtained from the resonance time of each nuclear spin:
 \begin{gather}
 	\tau_p \approx  \frac{(2p+1) \pi}{\omega_0 + \omega_1} \approx \frac{(2p+1)\pi}{2\omega_L(1+\frac{s_0+s_1}{2} \frac{A_{zz}}{\omega_L}+ \frac{s_0^2+s_1^2}{4}\frac{A_{zx}^2}{\omega_L^2})}
@@ -185,7 +190,7 @@ The fisher information gives a bound for the precision of parameter estimation, 
 \begin{equation}
 	\delta A^2 \ge \frac{1}{F(A) N}
 \end{equation}
-For the presented protocol, the precision for various spins is limited by \vvv{XXX} for the S=1, for the N = 4000. \\
+For the presented protocol, the precision for various spins is limited by 0.09 Hz for the S=1, for the N = 4000. \\
 
    
 The striking difference to the $S=1$ fisher information matrix, is the behaviour of the defect with $S=1/2$.
@@ -239,7 +244,7 @@ We acknowledge financial support by European Union's Horizon 2020 research and i
 %%%%%%%%%%%%%=========
 \appendix
 %%%%%%%%%%%%%=========
-\section{5pESEEM formula}
+\section{Sequences}
 \label{app:seqs}
 The details of mentioned sequences in the main text can be found in fig \ref{fig:seqs}:
 \begin{figure}%[htbp]
@@ -306,6 +311,14 @@ The blind spot term shows that how this sequence can be engineered to increase o
 \end{align}
 The blind spots does not depend only on one frequency but on the nuclear spin. It means if one resonant frequency is blinded, the other resonant frequency and all the multiple quantum resonances also vanishes. This can be used as a manifestation that which two peaks are from one nuclei. Also, This is very helpful especially in the presence of strongly coupled nuclear spin that suppress other nuclei. By sweeping $\tau_1$ and $\tau_2$, one can go through different bright and blind spots of each nuclear spin, observe which two peaks are correlated.
 
+
+\section{DD analysis for bispecies systems}
+\label{app:bispecies}
+Consider a single color center that is surrounded by two nuclear spin species. Each species has a distinct bath, which is processing with its corresponding Larmor frequency. Assuming large Larmor frequency with respect to hyperfine couplings, one can write Eq. \ref{eq:approx_DD} for two bath ($\omega_0 \approx \omega_1 \approx \omega_L$) as follows:
+\begin{gather}
+	\expval{\sigma_z}_{bath} \approx 1 -2 k_1^2 \sin^4(\frac{\omega_L^{(1)} \tau}{2}) -2 k_2^2 \sin^4(\frac{\omega_L^{(2)} \tau}{2})
+\end{gather}
+This means that two baths interfere, and the periodicity of the total bath is not straightforward any more. Hence, if there is a narrow peak next in DD signal, it can be attributed to both of the baths. To clarify the type of nuclear spins, one has to perform further experiments, e.g., in various external magnetic fields.
 %pass
 \bibliography{references}% Produces the bibliography via BibTeX.
 
