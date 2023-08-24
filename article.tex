@@ -155,25 +155,45 @@ The parallel component of the hyperfine interaction can be obtained from the res
 	\tau_p \approx  \frac{(2p+1) \pi}{\omega_0 + \omega_1} \approx \frac{(2p+1)\pi}{2\omega_L(1+\frac{s_0+s_1}{2} \frac{A_{zz}}{\omega_L}+ \frac{s_0^2+s_1^2}{4}\frac{A_{zx}^2}{\omega_L^2})}
 \end{gather}
 The perpendicular part of hyperfine interaction can be obtained from a fit to the Lorentzian dip with the width of $\frac{(s_1-s_0)\omega_L A_{zx}}{(2p+1)\pi\omega_0 \omega_1}$ or varying the number of pulses and fitting the minima position to the formula $\expval{\sigma_z}_{DD}^{(k)} \approx 1- 2 \sin^2\big(\frac{N}{2}\frac{(s_1-s_0)\omega_L A_{zx}}{\omega_0 \omega_1}\big) $. Although Dynamical Decoupling (DD) sequence is well understood and used to characterize nuclear spins, it is not applicable for any system. First, DD only works for defects with high magnetic field and low hyperfine coupling ($\omega_L \gg A_{zz}, A_{zx}$). Second, the signal is limited to electron spin $T_2$, which is difficult to make it equal to $T_1$. Third, the signal analysis is rather complicated and time-consuming. (Maybe AI solves this problem in the future?) one has to collect enough data to make sure no two nuclear spin overlap in the signal. Forth, this sequence does not work for spin one half system, e.g., group IV defect in diamond, since parallel component of hyperfine coupling cancels their effect in the resonance time up to the first and second order. Hence, the resonance time depends on the second order of perpendicular component. In this work, we take 23 nuclear spin characterized in paper \cite{abobeih2019atomic} as a realistic case. 
-\begin{figure}%[htbp]
+\begin{figure*}%[htbp]
 	\begin{center}
-		\includegraphics[width=0.9\columnwidth]{pict/dd_compare2.pdf}
+		\includegraphics[width=0.9\textwidth]{pict/dd_compare2.pdf}
 		\caption{Simulated DD signal with 64 $\pi$-pulses for the register reported \cite{abobeih2019atomic} assuming the electron spin is a. spin one b. spin one-half system. Simulated Fisher information for the case of the electron spin c. one d. one-half system.}
 		\label{fig:3}
 	\end{center}
-\end{figure}
+\end{figure*}
 Fig \ref{fig:3} compares DD signal for the same nuclear spin register but different defects in diamond. We present a handwavy definition for the sensitivity of a sequence to the variation of hyperfine coupling. First, we consider the case of NV center in diamond. By knowing the width of a dip $\delta \tau = \frac{A_{zx}}{\omega_L^2}$  and taking the derivative of the resonance time, we define the sensitivity of longitudinal hyperfine coupling as follows:
 \begin{gather}
 	\delta A_{zz} = \frac{\delta \tau}{\abs{\frac{\partial \tau_k}{\partial A_{zz}}}} = \frac{2}{\tau_k} \frac{A_{zx}}{\omega_L} \ge \frac{4}{T_2^{HE}} \frac{A_{zx}}{\omega_L}
 \end{gather}
-If we assume the typical values of $T_2^{HE} = 100 $ $\mu$s and $\omega_L=500 $ kHz, a weakly coupled nuclear spin $A_{zx}=5$ kHz can be distinguished from another weakly coupled nuclear spin with $\delta A_{zz} = 400$ Hz. On the other hand, for group IV detects in diamond, The resonance times is sensitive to the second order of $A_{zx}$ and no sensitivity to $A_{zz}$. Hence, even at large $\tau$ the nuclear spin not separated well. We define the sensitivity for the spin one half system as follows:
+If we assume the typical values of $T_2^{HE} = 100 $ $\mu$s and $\omega_L=500 $ kHz, a weakly coupled nuclear spin $A_{zx}=5$ kHz can be distinguished from another weakly coupled nuclear spin with $\delta A_{zz} = 400$ Hz. 
+For $S=1/2$, e.g. for group IV defects in diamond, the resonance times is sensitive to the second order of $A_{zx}$ and no sensitivity to $A_{zz}$. 
+Hence, even at large $\tau$ the resonances related to nuclear spins will not be separated well. 
+We define the sensitivity for the spin one half system as follows:
 \begin{gather}
 	\delta A_{zx} = \frac{\delta \tau}{\abs{\frac{\partial \tau_k}{\partial A_{zx}}}} = \frac{4}{\tau_k} \ge \frac{8}{T_2^{HE}}
 \end{gather}
-Assuming the typical values of $T_2^{HE} = 100 $ $\mu$s, a nuclear spin can be distinguished from another one if their transverse hyperfine coupling is separated by $\delta A_{zx} = 80$ kHz, which is quite inaccurate.\\
+Assuming the typical values of $T_2^{HE} = 100 $ $\mu$s, a nuclear spin can be distinguished from another one if their transverse hyperfine coupling is separated by $\delta A_{zx} = 80$ kHz, which is quite inaccurate and $\approx 160$ times worse than for $S=1$.
+To quantify the difference in sensitivity to estimating the hyperfine parameters, we perform calculation of the Fisher information matrix (FIM) for the 23 nuclear spin cluster, with 23 $A_{zz}$ and 23 $A_{zx}$ parameters (see Fig. \ref{fig:3}c,d). 
+The fisher information matrix is estimated for the probability to measure state $|0\rangle$ and reads as: 
+\begin{equation}
+	F_{ij}(\textbf{A})=\sum_\tau \frac{\partial p(0, \tau, \textbf{A})}{\partial A_i}\frac{\partial p(0, \tau, \textbf{A})}{ \partial A_j} \frac{1}{p (1-p)}.
+\end{equation}
+For the typical case of NV center, with $S=1$, since all the nuclear spin resonances are clearly resolved, the Fisher information matrix takes a diagonal shape, revealing a low covariance between the various nuclear spin resonances. 
+The crosstalk is existing between $A_{zz}$ and $A_{zx}$ of same nuclear spin, which is because the position of the peaks depends on both values. 
+The fisher information gives a bound for the precision of parameter estimation, known as Cramér–Rao bound: 
+\begin{equation}
+	\delta A^2 \ge \frac{1}{F(A) N}
+\end{equation}
+For the presented protocol, the precision for various spins is limited by \vvv{XXX} for the S=1, for the N = 4000. \\
 
    
-We want to make a sequence that is limited by T1 instead of T2. The idea of 5-pulse ESEEM \cite{kasumaj20085} is that to create an entanglement (Hahn-echo) before the free evolution (Ramsey). In other words, change the initial density matrix for the Ramsey sequence from such that entanglement already exist in the electron polarization terms of the density matrix. Fig \ref{fig:seqs} shows the sequence, which can be interpreted as two Hahn Echos that are separated by a long free evolution $T\gg T_2^\ast$ such that the coherence of the electron spin vanishes. The analytical formula to this sequence is provided in the appendix \ref{app:5pESEEM}. During the free evolution time, each nuclear spins oscillates with either of two resonance frequencies obtained from eq. \ref{eq:H}.
+The striking difference to the $S=1$ fisher information matrix, is the behaviour of the defect with $S=1/2$.
+
+On the other hand, a sequence that is limited by $T_1$ instead of $T_2$ is based on 3 and 5-pulse ESEEM. The main principle of 5-pulse ESEEM \cite{kasumaj20085} is to create an entanglement (via e.g. Hahn-echo block) before the free evolution of the nuclear spins and after make a second correlating sequence. 
+In other words, change the initial density matrix for the Ramsey sequence from such that entanglement already exist in the electron polarization terms of the density matrix, thus limitied by $T_1$ time. 
+Fig \ref{fig:seqs} shows the sequence, which can be interpreted as two Hahn Echos that are separated by a long free evolution $T\gg T_2^\ast$ such that the coherence of the electron spin vanishes. 
+The analytical formula to this sequence is provided in the appendix \ref{app:5pESEEM}. During the free evolution time, each nuclear spins oscillates with either of two resonance frequencies obtained from eq. \ref{eq:H}.
 
 \begin{figure*}[htbp]
 	\begin{center}
@@ -183,8 +203,17 @@ We want to make a sequence that is limited by T1 instead of T2. The idea of 5-pu
 	\end{center}
 \end{figure*}
 
->>>>>>> c0eaca02ca59681a3dedd48a17843824ce2f8aac
-Fig \ref{fig:4} shows the furrier transform of the signal. Zooming into area close to the Larmor frequency reveals the weakly coupled nuclei. Each nuclear spins have two peaks in the spectrum. Expanding the resonance frequencies up to first order with respect to hyperfine coupling results that the weakly coupled nuclei keep their order as they go further away from the nuclei. This fact makes their characterization rather straight forward. To observe the weakly coupled nuclei more pronouncedly, one can use DDESEEM sequence by adding more $\pi$ pulses in the entangling periods. To distinguish other nuclei, extra measurements is required. One method is to use two dimensional hyperfine correlation spectroscopy (2D Hyscore)  \cite{vorobyov2022addressing}. However, this method is rather time-consuming as two time variables has to be swept. We suggest sweeping $\tau$ parameter and keep the track of frequency amplitude as a function of $\tau$. Two frequencies that belong to the same nuclear are correlated because the modulation depth oscillates with blind spot terms of both frequencies $\sin^2(\frac{\omega_0 \tau}{2}) \sin^2(\frac{\omega_1 \tau}{2})$. Fig. \ref{fig:5} shows two frequencies goes to bright and blind spots simultaneously. Hence, taking two dimensional correlation of the spectrum, one can deduce which two frequencies are correlated and belong to the same nuclear. \\
+Fig \ref{fig:4} shows the Fourier transform of the signal. 
+Zooming into area close to the Larmor frequency reveals the weakly coupled nuclei. 
+Each nuclear spins have two peaks in the spectrum. 
+Expanding the resonance frequencies up to first order with respect to hyperfine coupling results that the weakly coupled nuclei keep their order as they go further away from the nuclei. 
+This fact makes their characterisation rather straight forward. 
+To observe the weakly coupled nuclei more pronouncedly, one can use DD-ESEEM sequence by adding more $\pi$ pulses in the entangling periods. 
+To distinguish other nuclei, extra measurements is required. 
+One method is to use two dimensional hyperfine correlation spectroscopy (2D Hyscore)  \cite{vorobyov2022addressing}. 
+However, this method is rather time-consuming as two time variables has to be swept. 
+We suggest sweeping $\tau$ parameter and keep the track of frequency amplitude as a function of $\tau$. 
+Two frequencies that belong to the same nuclear are correlated because the modulation depth oscillates with blind spot terms of both frequencies $\sin^2(\frac{\omega_0 \tau}{2}) \sin^2(\frac{\omega_1 \tau}{2})$. Fig. \ref{fig:5} shows two frequencies goes to bright and blind spots simultaneously. Hence, taking two dimensional correlation of the spectrum, one can deduce which two frequencies are correlated and belong to the same nuclear. \\
 
 Here, we try to simulate the realistic situation. First, the electron spin state is projected to 0 and 1 with a binomial distribution, the probability determined by the theoretical signal. Then, we assume the bright (dark) state emits 3 (0.1) photons on average with a Poissonian distribution. We repeat the measurement at each point for 10000 times to reduce classical noise.\\
 How many nuclear spin is identifiable with this method? It depends on the duration of free evolution time and the choice of inter-pulse timing $\tau$.
