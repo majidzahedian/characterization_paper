@@ -82,7 +82,7 @@ superscriptaddress,
              %  but any date may be explicitly specified
 
 \begin{abstract}
-Nuclear spins in solids is one of the most promising platforms for realisation of a scalable quantum hardware. They could be efficiently adressed at single site level by nearby single colour centers via the spin resonance. However, characterising each nuclear spin is quite cumbersome as the characterisation protocol may differ depending on the strength of the hyperfine coupling. The most adopted protocol is modified electron spin Hahn-echos such as CPMG and XY8 pulse sequences. In some cases, e.g. for spin 1/2, strongly coupled spins, and bispecies bath this protocol contains severe problems in applying for the nuclear spin bath characterisation. 
+Nuclear spins in solids is one of the most promising platforms for realisation of a scalable quantum hardware. They could be efficiently addressed at single site level by nearby single colour centers via the spin resonance. However, characterising each nuclear spin is quite cumbersome as the characterisation protocol may differ depending on the strength of the hyperfine coupling. The most adopted protocol is modified electron spin Hahn-echos such as CPMG and XY8 pulse sequences. In some cases, e.g. for spin 1/2, strongly coupled spins, and bispecies bath this protocol contains severe problems in applying for the nuclear spin bath characterisation. 
 Here, we present a more straight forward method to obtain hyperfine interaction among nuclear spins and the electron spin. 
 This method can be used for a variety of platform including emerging S=1/2 group IV defects in diamond (e.g. SiV, GeV, SnV, PbV) or Silicon vacancy in Silicon Carbide.
 We summarize theoretical framework and adopt it from ESR for the use in colour centers with various spins, and numerically consider case of nuclear spin cluster, as compare performance of various protocols on this example via the Fisher information matrix. 
@@ -104,21 +104,21 @@ Traditionally, nuclear spin characterisation is done with Optically Detected Mag
 Hahn Echo type sequences have been used to refocus the electron spin and enhance the coherence time of the electron spin \cite{childress2006coherent} thus improving the resolution to $1/T_2$. 
 This method could be applied for the defects with a specific nuclear spins configuration \vvv{(which?)}. 
 \vvv{In particular, the certain relation to the magnetic field and the coupling of the nuclear spins should be kept, (weakly coupled nuclear spins), as well as the spin number of the electron spin is affecting the observed behaviour}
-Depending on the applied protocol for the nuclear spins characterization, the number of accessible nuclear spin can increase. Electron Spin Echo Envelop Modulation (ESEEM) types of sequences allow us to access the highest number of nuclear spins since the spectroscopy resolution is limited to the longitudinal relaxation time ($T_1$) of the system (see fig. \ref{fig:1}) \cite{Laraui, Vorobyov}. 
-In particular we consider following common examples of nuclear spin registers ubiquitios in the applications. First, NV-like case with S=1, and weakly coupled nuclear spins, at high mangetic field such that $\gamma_n B \gg A_{zx}$. 
+Depending on the applied protocol for the nuclear spins characterisation, the number of accessible nuclear spin can increase. Electron Spin Echo Envelop Modulation (ESEEM) types of sequences allow us to access the highest number of nuclear spins since the spectroscopy resolution is limited to the longitudinal relaxation time ($T_1$) of the system (see fig. \ref{fig:1}) \cite{Laraui, Vorobyov}. 
+In particular we consider following common examples of nuclear spin registers ubiquitous in the applications. First, NV-like case with S=1, and weakly coupled nuclear spins, at high magnetic field such that $\gamma_n B \gg A_{zx}$. 
 This case is very well studied in the works of \cite{Tam27, Tam2012, Tam2014, Wrachtrup, before}.
 The ability to see narrow peaks with analytically predictable position and contrast allows one to solve the inverse problem of characterising the coupling of the nuclear spins to the electron spins. 
-The second case (see in Fig. \ref{fig1b}) refers to a similar case but with a strongly coupled nuclear spin, which hinders the observation of a weakly coupled nuclear spins. 
-This case in particular  is relevant for the case, where additional to the weakly coupled register a strongly coupled nuclear spin is used for e.g. repetitive  enhancment of the readout, via using the strongly coupled ancilla resolved in electron spin resonance spectra. 
-The third case (Fig. 1c) is relevant for the S=1/2 case, where due to the lack of the offset in the average evolution of the nuclear spin, its dynamics weakly depends on the Azz and only in the second order on the Azx \cite{suckachev}. 
-This leads to a poor distinguising ability of multiple nuclear spins and as a result lack of individual addressability of nuclear spins. 
-Finally, in the case of other materials host platforms, a bispecies nuclear spin bath could be observed, where the resonance peaks referrring to different larmour frequencies of different species additionaly complicate the reconstruction of the hamiltonian, and for unambiguous reconstruction of the interactions, additionall measurements e.g. at different B field would be needed. 
-In this work we argue that a correlation type sequence, based on 5p eseem could serve as a general framework as it promisses greate reconstruction potential for all above mentioned cases.  
+The second case (see in Fig. \ref{fig:1}b) refers to a similar case but with a strongly coupled nuclear spin, which hinders the observation of a weakly coupled nuclear spins. 
+This case in particular  is relevant for the case, where additional to the weakly coupled register a strongly coupled nuclear spin is used for e.g. repetitive  enhancement of the readout, via using the strongly coupled ancilla resolved in electron spin resonance spectra. 
+The third case (Fig. 1c) is relevant for the S=1/2 case, where due to the lack of the offset in the average evolution of the nuclear spin, its dynamics weakly depends on the Azz and only in the second order on the $A_{zx}$ \cite{suckachev}. 
+This leads to a poor distinguishing ability of multiple nuclear spins and as a result lack of individual addressability of nuclear spins. 
+Finally, in the case of other materials host platforms, a bispecies nuclear spin bath could be observed, where the resonance peaks referring to different Larmour frequencies of different species additionally complicate the reconstruction of the hamiltonian, and for unambiguous reconstruction of the interactions, additional measurements e.g. at different B field would be needed. 
+In this work we argue that a correlation type sequence, based on 5p eseem could serve as a general framework as it promises great reconstruction potential for all above mentioned cases.  
  
 \begin{figure*}%[htbp]
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{pict/drawing0.pdf}
-		\caption{Comparing DD and 5pESEEM as two nuclear spin characterization method in different systems. a. An electron spin one system: in DD signal, each nuclear spin has a distinct resonance time up to first order of $A_{zz}$; the accuracy of the obtained hyperfine interaction is limited to $T_2$ of the electron spin. In the Fourier transform of the ESEEM signal, the two resonance frequency of each spin is present; the accuracy of the obtained hyperfine interaction is limited to $T_1$ of the electron spin b. An electron spin one system with two strongly coupled nuclear spins and many weakly coupled spins. No resonance time is detectable since the required condition for DD ($\omega_L \gg A_{zz}, A{zx}$) does not hold. However, resonant frequencies is still obtainable in the ESEEM signal c. An electron spin one half system: nuclear spins have more or less the same resonance time as it depends on the second order of hyperfine coupling. However, resonant frequency of each spins is distinguishable in the ESEEM signal. d. A system containing two different nuclear spin species: two nuclear spin bath can interfere in the DD signal, which makes the signal analysis more challenging. However, the species can be inferred from ESEEM signal since species have different Larmor frequencies.}
+		\caption{Comparing DD and 5pESEEM as two nuclear spin characterisation method in different systems. a. An electron spin one system: in DD signal, each nuclear spin has a distinct resonance time up to first order of $A_{zz}$; the accuracy of the obtained hyperfine interaction is limited to $T_2$ of the electron spin. In the Fourier transform of the ESEEM signal, the two resonance frequency of each spin is present; the accuracy of the obtained hyperfine interaction is limited to $T_1$ of the electron spin b. An electron spin one system with two strongly coupled nuclear spins and many weakly coupled spins. No resonance time is detectable since the required condition for DD ($\omega_L \gg A_{zz}, A{zx}$) does not hold. However, resonant frequencies is still obtainable in the ESEEM signal c. An electron spin one half system: nuclear spins have more or less the same resonance time as it depends on the second order of hyperfine coupling. However, resonant frequency of each spins is distinguishable in the ESEEM signal. d. A system containing two different nuclear spin species: two nuclear spin bath can interfere in the DD signal, which makes the signal analysis more challenging. However, the species can be inferred from ESEEM signal since species have different Larmour frequencies.}
 		\label{fig:1}
 	\end{center}
 \end{figure*}
@@ -186,7 +186,7 @@ The perpendicular part of hyperfine interaction can be obtained from a fit to th
 \begin{figure*}%[htbp]
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{pict/dd_compare2.pdf}
-		\caption{Simulated DD signal with 64 $\pi$-pulses for the register reported \cite{abobeih2019atomic} assuming the electron spin is a. spin one b. spin one-half system. Simulated Fisher information for the case of the electron spin c. one d. one-half system.}
+		\caption{Simulated DD signal with 64 $\pi$-pulses for the register reported \cite{abobeih2019atomic} assuming the electron spin is a. spin one b. spin one-half system. Simulated Fisher information matrix for the case of the electron spin c. one d. one-half system.}
 		\label{fig:3}
 	\end{center}
 \end{figure*}
@@ -218,12 +218,11 @@ The fisher information gives a bound for the precision of parameter estimation, 
 \begin{equation}
 	\delta A^2 \ge \frac{1}{F(A) N}
 \end{equation}
-For the presented protocol, the precision for various spins is limited by 0.09 Hz for the S=1, for the N = 4000. \\
-
-   
+For the presented protocol, the precision for various spins is limited by 0.09 Hz \vvv{Hz squared?} for the S=1, for the N = 4000, while for the S=1/2 the value of the Cramer-Rao bound reads as \vvv{XXX} which is \vvv{YYYY} time smaller. \\
 The striking difference to the $S=1$ fisher information matrix, is the behaviour of the defect with $S=1/2$.
-
-On the other hand, a sequence that is limited by $T_1$ instead of $T_2$ is based on 3 and 5-pulse ESEEM. The main principle of 5-pulse ESEEM \cite{kasumaj20085} is to create an entanglement (via e.g. Hahn-echo block) before the free evolution of the nuclear spins and after make a second correlating sequence. 
+First of all, for both spin S=1/2 and S=1, the sequence spectral resolution is limited with $T_1$ relaxation time of the electron spin. 
+On the other hand, a sequence sensitivity is limited by $T_2$. 
+The main principle of 5-pulse ESEEM \cite{kasumaj20085} is to create an entanglement (via e.g. Hahn-echo or CPMG block) before the free evolution of the nuclear spins and after make a second correlating sequence. 
 In other words, change the initial density matrix for the Ramsey sequence from such that entanglement already exist in the electron polarization terms of the density matrix, thus limitied by $T_1$ time. 
 Fig \ref{fig:seqs} shows the sequence, which can be interpreted as two Hahn Echos that are separated by a long free evolution $T\gg T_2^\ast$ such that the coherence of the electron spin vanishes. 
 The analytical formula to this sequence is provided in the appendix \ref{app:5pESEEM}. During the free evolution time, each nuclear spins oscillates with either of two resonance frequencies obtained from eq. \ref{eq:H}.
@@ -238,18 +237,20 @@ The analytical formula to this sequence is provided in the appendix \ref{app:5pE
 
 Fig \ref{fig:4} shows the Fourier transform of the signal. 
 Zooming into area close to the Larmor frequency reveals the weakly coupled nuclei. 
-Each nuclear spins have two peaks in the spectrum. 
+Each nuclear spins have two peaks in the spectrum refering to the $\omega_a$ and $\omega_b$. 
 Expanding the resonance frequencies up to first order with respect to hyperfine coupling results that the weakly coupled nuclei keep their order as they go further away from the nuclei. 
 This fact makes their characterisation rather straight forward. 
 To observe the weakly coupled nuclei more pronouncedly, one can use DD-ESEEM sequence by adding more $\pi$ pulses in the entangling periods. 
 To distinguish other nuclei, extra measurements is required. 
 One method is to use two dimensional hyperfine correlation spectroscopy (2D Hyscore)  \cite{vorobyov2022addressing}. 
-However, this method is rather time-consuming as two time variables has to be swept. 
-We suggest sweeping $\tau$ parameter and keep the track of frequency amplitude as a function of $\tau$. 
+However, this method is rather time-consuming as two time variables has to be swept.
+The optimum time sampling techniques might be used to optimise the time of 2D sampling.  
+Here we suggest an alternative way, which in conventional ESR is used, i.e. sweeping $\tau$ parameter and keep the track of frequency amplitude as a function of $\tau$. 
 Two frequencies that belong to the same nuclear are correlated because the modulation depth oscillates with blind spot terms of both frequencies $\sin^2(\frac{\omega_0 \tau}{2}) \sin^2(\frac{\omega_1 \tau}{2})$. Fig. \ref{fig:5} shows two frequencies goes to bright and blind spots simultaneously. Hence, taking two dimensional correlation of the spectrum, one can deduce which two frequencies are correlated and belong to the same nuclear. \\
-
-Here, we try to simulate the realistic situation. First, the electron spin state is projected to 0 and 1 with a binomial distribution, the probability determined by the theoretical signal. Then, we assume the bright (dark) state emits 3 (0.1) photons on average with a Poissonian distribution. We repeat the measurement at each point for 10000 times to reduce classical noise.\\
-How many nuclear spin is identifiable with this method? It depends on the duration of free evolution time and the choice of inter-pulse timing $\tau$.
+To simulate the realistic experimental situation we model the electron spin state is projected to 0 and 1 with a binomial distribution where the probability determined by the analytical expressions.
+Then, we assume the bright (dark) state emits 3 (0.1) photons on average with a Poissonian distribution. We repeat the measurement at each point for 10000 times to reduce the classical photon shot noise.\\
+Next we approach estimation of number of nuclear spins, which could be identified.
+It depends on the duration of free evolution time and the choice of inter-pulse timing $\tau$.
 
 \begin{figure*}%[htbp]
 	\begin{center}
@@ -259,7 +260,7 @@ How many nuclear spin is identifiable with this method? It depends on the durati
 	\end{center}
 \end{figure*}
 
-\section{Conclusion}
+\section{Discussion}
 \label{sec:discussion}
 %\subsection{Advanced filters}
 Here is the concise conclusion @Vadim
