@@ -94,12 +94,27 @@ We summarize theoretical framework and adopt it from ESR for the use in colour c
 %\tableofcontents
 \section{Introduction and background}
 Optically active defects in solids, color centers, has been applied for realising different quantum applications \cite{awschalom2018quantum}, such as a quantum network \cite{pompili2021realization}, quantum sensing \cite{degen2017quantum}, and quantum registers \cite{bradley2019ten}. 
-Each center contains an electron spin that can be controlled directly with microwaves, aligned and read via optics. 
-The key element for most applications is that they could be coupled through the hyperfine coupling to the bath of numerous nuclear spins presenting a long living quantum memories and could present a nuclear spin qubit register. 
-To design the efficient quantum control for the memories, a precise knowledge of the full hamiltonian of the register needs to be known and characterised before. 
-However, characterising the nuclear spin hyperfine coupling could be a challenge and a lengthy procedure. 
 
-is necessary for enlarging the quantum register and precise description of the electron spin dynamics. Traditionally, nuclear spin characterisation is done with Optically Detected Magnetic Resonance (ODMR) (ref to Phillip Neumann's works), however the spectroscopic resolution is limited to the $T_2^\ast$ of the electron spin. Hence, some sequence is needed to increase the resolution. People have used Hahn Echo sequence to refocus the electron spin and enhance the coherence time of the electron spin \cite{childress2006coherent}. But this method only works for defects with a specific nuclear spins configuration. Depending on the applied protocol for nuclear spins characterization, the number of accessible nuclear spin can increase. Electron Spin Echo Envelop Modulation (ESEEM) types of sequences allow us to access the highest number of nuclear spins since the spectroscopy resolution is limited to the longitudinal relaxation time ($T_1$) of the system (see fig. \ref{fig:1}). 
+
+Each center contains an electron spin that can be controlled directly with microwaves, initialised and read out via optical excitation. 
+The key element for most applications is that they could be coupled through the hyperfine coupling to the bath of numerous nuclear spins presenting a long living quantum memories and could present an optically accessible nuclear spin qubit register. 
+To design the efficient quantum control for the memories, a precise knowledge of the full hamiltonian of the register needs to be known and characterised before. 
+However, characterising the nuclear spin hyperfine coupling could be a challenging and a lengthy procedure \cite{taminuau27, taminiau50}. 
+Traditionally, nuclear spin characterisation is done with Optically Detected Magnetic Resonance (ODMR) \cite{Dreau, Neumann, Eriks}, however the spectroscopic resolution is limited to the $1/T_2^\ast$ of the electron spin. 
+Hahn Echo type sequences have been used to refocus the electron spin and enhance the coherence time of the electron spin \cite{childress2006coherent} thus improving the resolution to $1/T_2$. 
+This method could be applied for the defects with a specific nuclear spins configuration \vvv{(which?)}. 
+\vvv{In particular, the certain relation to the magnetic field and the coupling of the nuclear spins should be kept, (weakly coupled nuclear spins), as well as the spin number of the electron spin is affecting the observed behaviour}
+Depending on the applied protocol for the nuclear spins characterization, the number of accessible nuclear spin can increase. Electron Spin Echo Envelop Modulation (ESEEM) types of sequences allow us to access the highest number of nuclear spins since the spectroscopy resolution is limited to the longitudinal relaxation time ($T_1$) of the system (see fig. \ref{fig:1}) \cite{Laraui, Vorobyov}. 
+In particular we consider following common examples of nuclear spin registers ubiquitios in the applications. First, NV-like case with S=1, and weakly coupled nuclear spins, at high mangetic field such that $\gamma_n B \gg A_{zx}$. 
+This case is very well studied in the works of \cite{Tam27, Tam2012, Tam2014, Wrachtrup, before}.
+The ability to see narrow peaks with analytically predictable position and contrast allows one to solve the inverse problem of characterising the coupling of the nuclear spins to the electron spins. 
+The second case (see in Fig. \ref{fig1b}) refers to a similar case but with a strongly coupled nuclear spin, which hinders the observation of a weakly coupled nuclear spins. 
+This case in particular  is relevant for the case, where additional to the weakly coupled register a strongly coupled nuclear spin is used for e.g. repetitive  enhancment of the readout, via using the strongly coupled ancilla resolved in electron spin resonance spectra. 
+The third case (Fig. 1c) is relevant for the S=1/2 case, where due to the lack of the offset in the average evolution of the nuclear spin, its dynamics weakly depends on the Azz and only in the second order on the Azx \cite{suckachev}. 
+This leads to a poor distinguising ability of multiple nuclear spins and as a result lack of individual addressability of nuclear spins. 
+Finally, in the case of other materials host platforms, a bispecies nuclear spin bath could be observed, where the resonance peaks referrring to different larmour frequencies of different species additionaly complicate the reconstruction of the hamiltonian, and for unambiguous reconstruction of the interactions, additionall measurements e.g. at different B field would be needed. 
+In this work we argue that a correlation type sequence, based on 5p eseem could serve as a general framework as it promisses greate reconstruction potential for all above mentioned cases.  
+ 
 \begin{figure*}%[htbp]
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{pict/drawing0.pdf}
@@ -112,20 +127,25 @@ is necessary for enlarging the quantum register and precise description of the e
 
 
 %%%%%%%%%%%%%%%%%%%================= %THEORY
-\section{Methods}
+\section{Results}
 \label{sec:theory}
 %%%%%%%%%%%%%%%Í%%%%=================
-In this section, we provide the theoretical formulas for. In a central electron spin with the electron spin $\boldmath{S}$, we only apply pulses resonant with two of the electron spin sublevels, denoted as $m_s=s_0$ and $m_s = s_1$. These two spin sublevels are separated, due to Zeeman effect or zero field splitting, and form an artificial two-level system with energy splitting of $\omega_a$. Now, we add spin $\frac{1}{2}$nuclear spins to the system (for considering P1 centers, one has to add nuclear quadrupole to the presented Hamiltonian.). The Hamiltonian of a central electron spins system surrounded by nuclear spins in the secular approximation in the rotating frame of the applied microwave $\omega_{mw}$ (considering rotating wave approximation) can be written as:
+We consider a central spin system of \textit{non-interacting} nuclear spins $I=1/2$ coupled to the central electron spin $\boldmath{S}$. 
+The central electron spin is manipulated resonantly with the microwave pulses, which transfer the population between the two sublevels, denoted as $m_s=s_0$ and $m_s = s_1$. 
+These two spin sublevels are separated, due to the Zeeman effect and/or zero field splitting, and form an two-level subsystem with energy splitting of $\omega_a$. 
+The Hamiltonian of the system in the secular approximation and in the rotating frame of the applied microwave $\omega_{mw}$ can be written as:
 \begin{align}
 	H = \Delta S_z + \sum_k (\omega_L^{(k)}  + A_{zz}^{(k)} S_z) I_z^{(k)} + A_{zx}^{(k)} S_z I_x^{(k)}
 	\label{eq:H}
 \end{align}
-Where $\Delta = \omega_a - \omega_{mw}$ is the detuning, $\omega_L^{(k)} =\gamma_n^{(k)} B$ is nuclear Rabi frequency with $\gamma_n^{(k)}$ nuclear spin gyromagnetic ratio and $B$ external magnetic field, $A_{zz}, A_{zx}$ parallel and perpendicular secular component of hyperfine tensor. This Hamiltonian results that depending on the electron spin sublevel $s_i$ ($i=0,1$), the nuclear spin rotate with the resonance frequency of $\omega_i = \sqrt{(\omega_L + s_i A_{zz})^2+ (s_i A_{zx})^2}$, $i=0,1$ along the axes $\vec{n}_i =(\frac{s_i A_{zx}}{\omega_i}, 0, \frac{\omega_L + s_i A_{zz}} {\omega_i})$. It is assumed that the pulse duration $t_p$ are short enough ($\omega_L t_p \ll 1$) that the nuclear spin dynamics during this time is negligible. The most simplest characterization sequence is Ramsey. \\ The Ramsey signal can be obtained as follows:
+Where $\Delta = \omega_a - \omega_{mw}$ is the detuning, $\omega_L^{(k)} =\gamma_n^{(k)} B$ is nuclear Rabi frequency with $\gamma_n^{(k)}$ nuclear spin gyromagnetic ratio and $B$ external magnetic field, $A_{zz}, A_{zx}$ parallel and perpendicular secular component of hyperfine tensor. The Hamiltonian is diagonal in the electron spin subspace, thus the hamiltonian for the nuclear spins could be rewritten in electron spin subdomains $s_i$ ($i=0,1$). The nuclear spin hamiltonian could be solved for eigenenergies, which determine the precession frequencies of $\omega_i = \sqrt{(\omega_L + s_i A_{zz})^2+ (s_i A_{zx})^2}$, $i=0,1$ along the eigenvector axes $\vec{n}_i =(\frac{s_i A_{zx}}{\omega_i}, 0, \frac{\omega_L + s_i A_{zz}} {\omega_i})$. It is assumed that the pulse duration $t_p$ are short enough ($\omega_L t_p \ll 1$) that the nuclear spin dynamics during this time is negligible. 
+For completeness we start our analysis with the simplest characterization sequence, which is the electron spin ramsey sequence (free induction decay of electron) (see Appendix for derivation).
+The Ramsey signal can be obtained as follows:
 \begin{gather}
 	\expval{\sigma_z}_{Ram} = \cos(\Delta \tau) \prod_{k=1}^{n} \Big[ \cos(\frac{\omega_0 \tau}{2}) \cos(\frac{\omega_1 \tau}{2})+ \notag \\
 	(\vec{n_0}\cdot \vec{n_1})\sin(\frac{\omega_0 \tau}{2}) \sin(\frac{\omega_1 \tau}{2}) \Big]^{(k)}
-	\textcolor{gray}{e^{-\frac{\tau}{T_2^\ast}}}
-\end{gather} 
+	\textcolor{gray}{e^{-(\frac{\tau}{T_2^\ast})^m}}
+\end{gather}	
 We do not take any relaxation process into account and the gray exponential decay is put by hand to remember the relaxation time scale. Ramsey signal decay with electron spin $T_2^\ast$, so it can be used to observe the core of the defect. Ramsey sequence is sensitive to detuning since the electron spin is not refocused, however it is possible to sense nuclear spins with vanishing perpendicular hyperfine coupling.\\
 
 To enhance the relaxation time and have access to more nuclei, one can add a $\pi$ pulse in between the Ramsey sequence and create Hahn-echo sequence and obtain the following signal:
@@ -133,9 +153,12 @@ To enhance the relaxation time and have access to more nuclei, one can add a $\p
 	\expval{\sigma_z}_{HE} = \prod_{j=1}^n \Big[1 - 2 k^2 
 	\sin^2(\frac{\omega_0 \tau}{2}) \sin^2(\frac{\omega_1 \tau}{2})\Big]^{(j)} \textcolor{gray}{ e^{-\frac{2\tau}{T_2}}}
 \end{gather}
-Where $k = \frac{(s_1-s_0)\omega_L A_{zx}}{\omega_0 \omega_1}$ is the modulation amplitude of each nuclear spin. We know that without any nuclear spin, Hahn Echo sequence creates the electron spin echo signal with the envelope of exponential decay with $T_2^{HE}$. However in the presence of nuclear spins, the electron spin echo envelope will be modulated due to interaction with nuclei. Hence, this sequence also called Electron Spin Echo Envelope Modulation or shortly ESEEM. Even though the coherence time is increased, distinguishing the effect of different nuclear spins in the total signal is very complicated. Hahn Echo sequence can be used for defects that contain a few strongly coupled nuclei. In order to differentiate the resonance frequency of each nuclear spin or make the oscillation sharper, one has to add more $\pi$ pulses and for the so-called Dynamical Decoupling sequence:
-Finally, the signal for dynamical decoupling is obtained:
-\small 
+Where $k = \frac{(s_1-s_0)\omega_L A_{zx}}{\omega_0 \omega_1}$ is the modulation amplitude of each nuclear spin.  
+Without any nuclear spin, Hahn Echo sequence creates the electron spin echo signal with the envelope of stretched exponential decay with $T_2^{HE}$. 
+However in the presence of nuclear spins, the electron spin echo envelope will be modulated due to interaction with nuclei. 
+Hence, this sequence also called Electron Spin Echo Envelope Modulation or shortly ESEEM. 
+Even though the coherence time is increased, distinguishing the effect of different nuclear spins in the total signal is very complicated. 
+Hahn Echo sequence can be used for defects that contain a few strongly coupled nuclei. In order to differentiate the resonance frequency of each nuclear spin or make the oscillation sharper, one can to add more $\pi$ pulses and for the so-called Dynamical Decoupling sequence to sharpen the resonance conditions (neglecting decoherence terms):
 \begin{gather}
 	\expval{\sigma_z}_{DD} =
 	\prod_{j=1}^n \Big[1- 2 k^2  
@@ -167,7 +190,12 @@ The perpendicular part of hyperfine interaction can be obtained from a fit to th
 		\label{fig:3}
 	\end{center}
 \end{figure*}
-Fig \ref{fig:3} compares DD signal for the same nuclear spin register but different defects in diamond. We present a handwavy definition for the sensitivity of a sequence to the variation of hyperfine coupling. First, we consider the case of NV center in diamond. By knowing the width of a dip $\delta \tau = \frac{A_{zx}}{\omega_L^2}$  and taking the derivative of the resonance time, we define the sensitivity of longitudinal hyperfine coupling as follows:
+In this work, we take the 23 nuclear spins cluster characterized in paper \cite{abobeih2019atomic} as a realistic case. 
+First, we apply this to the dynamical decoupling sequence, and visualise the obtained results. 
+Fig \ref{fig:3} compares DD signal for the same nuclear spin register but different defects in diamond. 
+An intuitive description for the sensitivity of a sequence to the variation of hyperfine coupling could estimated knowing the width and sensitivity of the position of the resonances. 
+First, we consider the case of NV center in diamond. 
+The width of a dip $\delta \tau = \frac{A_{zx}}{\omega_L^2}$  and taking the derivative of the resonance time, we define the sensitivity of longitudinal hyperfine coupling as follows:
 \begin{gather}
 	\delta A_{zz} = \frac{\delta \tau}{\abs{\frac{\partial \tau_k}{\partial A_{zz}}}} = \frac{2}{\tau_k} \frac{A_{zx}}{\omega_L} \ge \frac{4}{T_2^{HE}} \frac{A_{zx}}{\omega_L}
 \end{gather}
