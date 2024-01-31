@@ -86,8 +86,8 @@ Nuclear spins in solids offer a promising avenue for developing scalable quantum
 However, characterising individual nuclear spin is quite cumbersome since the utility of characterisation protocols may differ depending on the strength of the hyperfine coupling, necessitating tailored characterization protocols.
 While modified electron spin Hahn echoes like CPMG and XY8 pulse sequences are commonly employed, they encounter significant limitations in scenarios involving spin-1/2 systems, strongly coupled spins, or nuclear spin baths comprising distinct isotopes.
 Here, we present a more straightforward approach for determining the hyperfine interactions among each nuclear and the electron spin. 
-This method holds promise across diverse platforms, including emerging S=1/2 group IV defects in diamond (e.g., SiV, GeV, SnV, PbV) or silicon vacancies in silicon carbide. 
-We provide a theoretical framework and adapt it for use with color centers exhibiting various spins. Through simulations conducted on nuclear spin clusters, we evaluate different protocols and compare their performance using the Fisher information matrix.
+This method holds promise across diverse platforms, especially for emerging S=1/2 group IV defects in diamond (e.g., SiV, GeV, SnV, PbV) or silicon (T-centre). 
+We provide a theoretical framework and adapt it for use with color-centers exhibiting various spins. Through simulations conducted on nuclear spin clusters, we evaluate different protocols and compare their performance using the Fisher information matrix.
 \end{abstract}
 
 %\keywords{Suggested keywords}%Use showkeys class option if keyword
@@ -102,22 +102,23 @@ Each center contains an electron spin that can be directly controlled using micr
 The potential hyperfine interactions with a bath of numerous nuclear spins are crucial for diverse applications, as they offer long-lived quantum memories and enable the creation of an optically accessible nuclear spin qubit register.
 To implement efficient quantum control for these memories, it is imperative to have precise knowledge of the full Hamiltonian governing the register.
 However, characterizing the hyperfine coupling of nuclear spins can be both challenging and time-consuming \cite{abobeih2019atomic, van2023mapping}. 
-Traditionally, nuclear spin characterization is accomplished through Optically Detected Magnetic Resonance (ODMR) \cite{Dreau, Neumann, Eriks}, but the spectroscopic resolution is constrained by the $1/T_2^\ast$ of the electron spin. 
+Traditionally, nuclear spin characterization is accomplished through Optically Detected Magnetic Resonance (ODMR) \cite{Dreau:2012aa,hesselmeier2023measuring}, but the spectroscopic resolution is constrained by the $1/T_2^\ast$ of the electron spin. 
 To overcome this limitation, Hahn-Echo-type sequences have been employed to refocus the electron spin and extend its coherence time \cite{childress2006coherent}, thereby improving the resolution to $1/T_2$. 
 This method could be applied to defects with a specific configuration of nuclear spins, particularly those with a certain relation to the magnetic field and the coupling of the nuclear spins, such as weakly coupled nuclear spins.
-Also, the protocols also can only be applied to electron spins with a specific spin multiplicity
+Also, the protocols also can only be applied to electron spins with a specific spin multiplicity.
 Depending on the applied protocol for the nuclear spins characterisation, the number of identifiable nuclear spin can increase.
-Electron Spin Echo Envelop Modulation (ESEEM) types of sequences allow access to the highest number of nuclear spins, as the spectroscopy resolution is limited to the longitudinal relaxation time ($T_1$) of the system. (see fig. \ref{fig:1}) \cite{Laraui, Vorobyov}.
-In particular, we consider the following common examples of nuclear spin registers that are ubiquitous in applications. First, the NV-like case with S=1 and weakly coupled nuclear spins, operating at high magnetic fields where $\gamma_n B \gg A_{zx}$ which has been extensively studied in the works of \cite{abobeih2019atomic, taminiau2012detection, Tam2014, Wrachtrup, before}.
+Electron Spin Echo Envelop Modulation (ESEEM) types of sequences allow access to the highest number of nuclear spins, as the spectroscopy resolution is limited to the longitudinal relaxation time ($T_1$) of the system. (see fig. \ref{fig:1}) \cite{laraoui2013high, vorobyov2022addressing}.
+In particular, we consider the following common examples of nuclear spin registers that are ubiquitous in applications. First, the NV-like case with $S=1$ and weakly coupled nuclear spins, operating at high magnetic fields where $\gamma_n B \gg A_{zx}$ which has been extensively studied in the works of \cite{abobeih2019atomic, taminiau2012detection, Zhao:2014aa}.
 The capability to observe narrow peaks with analytically predictable positions and contrasts enables the solution of the inverse problem concerning the characterization of the coupling between nuclear spins and electron spins. 
 The second case (as depicted in Fig. \ref{fig:1}b) corresponds to a scenario similar to the first, but with the presence of a strongly coupled nuclear spin, which obstructs the observation of weakly coupled nuclear spins.
 This case is particularly relevant in situations where, in addition to the weakly coupled register, a strongly coupled nuclear spin is utilized, for instance, for repetitive enhancement of the readout.
 This enhancement is achieved by exploiting the strongly coupled ancilla, which is discernible in electron spin resonance spectra.
-The third case (Fig. 1c) pertains to the S=1/2 scenario, where the lack of offset in the average evolution of the nuclear spin results in its dynamics weakly depending on Azz and only in the second order on $A_{zx}$ \cite{suckachev}.
-Consequently, this leads to a limited ability to distinguish between multiple nuclear spins and, consequently, a lack of individual addressability of nuclear spins.
+The third case (Fig. \ref{fig:1}c) pertains to the $S=1/2$ scenario, where the lack of offset in the average evolution of the nuclear spin results in its dynamics weakly depending on $A_{zz}$ and only the second order dependence on $A_{zx}$.
+Consequently, this leads to a limited ability to distinguish between multiple nuclear spins and a lack of individual addressability of nuclear spins.
 Lastly, in the case of other material host platforms, a bispecies nuclear spin bath may be observed, where resonance peaks corresponding to different Larmor frequencies of different species further complicate the reconstruction of the Hamiltonian.
 For unambiguous reconstruction of the interactions, additional measurements, such as those at different magnetic field strengths, would be required.
-In this work, we propose that a correlation-type sequence, based on five pulse ESEEM, could serve as a general framework as it holds promise for the reconstruction of the interactions in all of the aforementioned cases.  
+While the double resonance methods \cite{Bradley:2019aa,zaiser2016enhancing} posses a large promise for nuclear spin spectroscopy, they require additional experimental hardware, and often are not available. 
+Thus, in this work, we investigate the limits of electron spin driven schemes, in particular a correlation-type sequences, which could serve as a general framework and hold promise for the reconstruction of the interactions in all of the aforementioned cases.  
  
 \begin{figure*}%[htb]
 	\begin{center}
@@ -210,7 +211,6 @@ Third, signal analysis is rather complicated and time-consuming; one has to coll
 Fourth, this sequence does not work for spin 1/2 systems, such as group IV defects in diamond, since the parallel component of the hyperfine coupling cancels their effect on the first order electron spin signal.
 Hence, the resonance signal depends on the second order of the perpendicular hyperfine component.
 
-In this work, we consider 23 nuclear spins characterized in paper \cite{abobeih2019atomic} as a realistic case.
 \begin{figure*}%[htbp]
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{pict/dd_compare2.pdf}
