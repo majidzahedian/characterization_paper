@@ -113,7 +113,7 @@ Traditionally, nuclear spin characterization is accomplished through Optically D
 To overcome this limitation, Hahn-Echo-type sequences have been employed to refocus the electron spin and extend its coherence time \cite{childress2006coherent}, thereby improving the resolution to $1/T_2$. 
 This method could be applied to defects with a specific configuration of nuclear spins, particularly those with a certain relation to the magnetic field and the coupling of the nuclear spins, such as weakly coupled nuclear spins.
 Also, the protocols also can only be applied to electron spins with a specific spin multiplicity.
-Depending on the applied protocol for the nuclear spins characterisation, the number of identifiable nuclear spin can increase.
+Depending on the applied protocol for the nuclear spins characterisation, the number of identifiable nuclear spin can be different.
 Electron Spin Echo Envelop Modulation (ESEEM) types of sequences allow access to the highest number of nuclear spins, as the spectroscopy resolution is limited to the longitudinal relaxation time ($T_1$) of the system. (see fig. \ref{fig:1}) \cite{laraoui2013high, vorobyov2022addressing}.
 In particular, we consider the following common examples of nuclear spin registers that are ubiquitous in applications. First, the NV-like case with $S=1$ and weakly coupled nuclear spins, operating at high magnetic fields where $\gamma_n B \gg A_{zx}$ which has been extensively studied in the works of \cite{abobeih2019atomic, taminiau2012detection, Zhao:2014aa}.
 The capability to observe narrow peaks with analytically predictable positions and contrasts enables the solution of the inverse problem concerning the characterization of the coupling between nuclear spins and electron spins. 
@@ -137,7 +137,7 @@ Thus, in this work, we investigate the limits of electron spin driven schemes, i
 \begin{figure*}%[htbp]
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{pict/dd_compare2.pdf}
-		\caption{Simulated DD signal with 64 $\pi$-pulses for the register reported in  \cite{abobeih2019atomic} assuming the electron spin is a. spin 1 system b. spin 1/2 system. Simulated Fisher information matrix for the case of the electron spin c. spin 1 system d. spin 1/2 system.}
+		\caption{Simulated DD signal with 64 $\pi$-pulses for the register reported in  \cite{abobeih2019atomic} consist of 23 nuclear spins, assuming the electron spin is a. spin 1 system b. spin 1/2 system. Simulated Fisher information matrix for the case of the electron spin c. spin 1 system d. spin 1/2 system. The first 23 hyperfine parameters are $A_{zz}$ and the second 23 parameters are $A_{zx}$ of the nuclear spin register.}
 		\label{fig:3}
 	\end{center}
 \end{figure*}
@@ -154,7 +154,7 @@ Where $\Delta = \omega_a - \omega_{mw}$ is the detuning, $\omega_L^{(k)} =\gamma
 The Hamiltonian is diagonal in the electron spin subspace, thus the Hamiltonian for the nuclear spins could be rewritten in the electron spin subdomains $s_i$ ($i=0,1$).
 The nuclear spin Hamiltonian could be solved for eigenenergies, which determine the precession frequencies of $\omega_i = \sqrt{(\omega_L + s_i A_{zz})^2+ (s_i A_{zx})^2}$, $i=0,1$ along the eigenvector axes $\vec{n}i =(\frac{s_i A{zx}}{\omega_i}, 0, \frac{\omega_L + s_i A_{zz}} {\omega_i})$.
 It is assumed that the pulse duration $t_p$ is short enough ($\omega_L t_p \ll 1$) that the nuclear spin dynamics during this time is negligible.
-For completeness, we start our analysis with the simplest characterization sequence, which is the electron spin Ramsey sequence (free induction decay of the electron) (see the Appendix for derivation).
+For completeness, we start our analysis with the simplest characterization sequence, which is the electron spin Ramsey sequence (free induction decay of the electron).
 The Ramsey signal can be obtained as follows:
 \begin{gather}
 	\expval{\sigma_z}_{Ram} = \cos(\Delta \tau) \prod_{j=1}^{n} \Big[ \cos(\frac{\omega_0 \tau}{2}) \cos(\frac{\omega_1 \tau}{2})+ \notag \\
@@ -174,7 +174,7 @@ However, in the presence of nuclear spins, the electron spin echo envelope will 
 Hence, this sequence is also called Electron Spin Echo Envelope Modulation or simply ESEEM.
 Even though the coherence time is increased, distinguishing the effect of different nuclear spins in the total signal is very complicated.
 The Hahn Echo sequence can be used for defects that contain a few strongly coupled nuclei.
-In order to differentiate the resonance frequency of each nuclear spin or to sharpen the oscillations, one can add more $\pi$ pulses, creating the so-called Dynamical Decoupling sequence to separate the resonance condition for individual nuclear spin. For the even number of $\pi$ pulses, $N$, The DD signal can be obtained (neglecting decoherence terms):
+In order to differentiate the resonance frequency of each nuclear spin or to sharpen the oscillations, one can add more $\pi$ pulses, creating the so-called Dynamical Decoupling (DD) sequence to separate the resonance condition for individual nuclear spin. For the even number of $\pi$ pulses, $N$, The DD signal can be obtained (neglecting decoherence terms):
 \begin{gather} \label{eq:DD}
 	\expval{\sigma_z}_{DD} =
 	\prod_{j=1}^n \Big[1- 2 k^2  
@@ -195,7 +195,7 @@ This resonance time can be obtained assuming $\omega_L \gg A_{zz}, A_{zx}$ is sa
 Experimental observation of the resonance times provides valuable information about the nuclear spins.
 For instance, in the case of an NV center, the second-order term $\frac{A_{zx}^2}{\omega_L^2}$ can be neglected, allowing for the direct determination of the $A_{zz}$ hyperfine component from the resonances.
 To proceed with the characterization, Eq. \ref{eq:DD} needs to be further simplified, requiring stronger assumptions.
-Focusing on weakly coupled nuclear spins or high magnetic field situations, the multiplication rule can be approximated by a summation rule, neglecting the higher-order cross-resonance terms:
+Focusing on weakly coupled nuclear spins or high magnetic field situations, the multiplication over all nuclear spins in Eq. \ref{eq:DD} can be approximated by a summation rule, neglecting the higher-order cross-resonance terms:
 \small
 \begin{gather}
 	\expval{\sigma_z}_{DD} \approx 1 -2
@@ -220,7 +220,7 @@ Hence, the resonance signal depends on the second order of the perpendicular hyp
 \begin{figure*}[htbp]
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{pict/eseem_compare2.pdf}
-		\caption{Simulated FFT of ESEEM signal with a zoom into weakly coupled nuclear spins for the register reported \cite{abobeih2019atomic} assuming the electron spin 1/2 system. b. Enhancing the sensitivity to weakly coupled spins by increasing number of $\pi$-pulses to $N=72$ pulses in each entangling period. $\tau$ is set to the Larmor bright spot. Simulated Fisher information for the case of the electron spin c. one d. one-half system.}
+		\caption{Simulated FFT of ESEEM signal with a zoom into weakly coupled nuclear spins for the register reported \cite{abobeih2019atomic} consist of 23 nuclear spins, assuming the electron spin 1/2 system. b. Enhancing the sensitivity to weakly coupled spins by increasing number of $\pi$-pulses to $N=72$ pulses in each entangling period. $\tau$ is set to the Larmor bright spot. Simulated Fisher information for the case of the electron spin c. one d. one-half system. The first 23 hyperfine parameters are $A_{zz}$ and the second 23 parameters are $A_{zx}$ of the nuclear spin register.}
 		\label{fig:ddeseem}
 	\end{center}
 \end{figure*}
@@ -264,7 +264,7 @@ The striking difference to the $S=1$ Fisher Information Matrix is the behavior o
 First of all, for both spin $S=1/2$ and $S=1$, the sequence's spectral resolution is limited by the $T_1$ relaxation time of the electron spin.
 On the other hand, the sequence's sensitivity is limited by $T_2$.
 The main principle of 5-pulse ESEEM \cite{kasumaj20085} is to create entanglement (via, e.g., Hahn-echo or CPMG block) before the free evolution of the nuclear spins and then to apply a second correlating sequence afterwards.
-In other words, the initial density matrix for the Ramsey sequence is modified so that entanglement already exists in the electron polarization terms of the density matrix, thus limited by $T_1$ time.
+In other words, the initial density matrix for the Hahn Echo sequence is modified so that entanglement already exists in the electron polarization terms of the density matrix, thus limited by $T_1$ time.
 Fig \ref{fig:seqs} shows the sequence, which can be interpreted as two Hahn Echos separated by a long free evolution $T\gg T_2^\ast$ such that the coherence of the electron spin vanishes. The analytical formula for this sequence is provided in the appendix \ref{app:5pESEEM}.
 During the free evolution time, each nuclear spin oscillates with one of two resonance frequencies obtained from Eq. \ref{eq:H}.
 
@@ -291,35 +291,39 @@ Hence, by taking a two-dimensional correlation of the spectrum, one can deduce w
 
 To simulate the realistic experimental situation, we model the electron spin state as projected to 0 and 1 with a binomial distribution where the probability is determined by the analytical expressions. Then, we assume the bright (dark) state emits 3 (0.1) photons on average with a Poissonian distribution. We repeat the measurement at each point for 10,000 times to reduce classical photon shot noise.
 
-Next, we approach the estimation of the number of nuclear spins that could be identified. It depends on the duration of free evolution time and the choice of inter-pulse timing $\tau$. For the realistic case of the $T_1 = 1$ s, and $T_2 = 100 \mu s$, we approach the estimation of the Fisher information matrix for various protocols and approach the system with moderate N=16 pulses for the dynamical decoupling sequence and simplest 5 pulse ESEEM for correlation protocol for simplicity of calculation, since in that case the analytical expressions are available. 
 
-On Fig. \ref{fig:cov} we see a manifestation of the correlation protocol for spin 1/2 system realised in a number of nuclear spins one could estimate with each of the protocols. 
-The figure presents the dots, in the $A_{zz}, A_{zx}$ axes, with an area bounded by Cramer-Rao bound around each point. 
-When uncertainty is larger the absolute values of the coupling, the point is considered to be non-detectable or if it is larger than the distance to the nearest point non distinguishable and is marked in red.
-Alternatively, it is considered to be identified and is turned blue. 
-Additionally, we plot an ellipses, with two points as it foci and small axis size as a value of the covariance between various parameters in the Cramer-Rao bound. 
-We plot only single ellipse with largest covariance value. 
-This values are calculated as off-diagonal elements in the inverse Fisher information matrix. 
-This covariances are mostly show the crosstalk between different parameters in the presented data, and are more strongly present in the DD S=1/2 case. 
-The idea behind ellipse representation, is that when the covariance is larger than the self-variance, the ellipse absorbs the individual points, and the points become indistinguishable. 
-We find that, while this crosstalk is not the limiting factor for informational approach, it might be important when a realistic estimator is considered. 
-We note, that this is not strictly same condition as in the experimental identification, and is idealised. 
-We only consider the available information in the plot, assuming that an optimum estimator for extraction of that information already exist. 
-In reality, one has to additionally assume a non ideal estimator procedure, which involves extraction of the hyperfine parameter values from the raw data and is a subject of further work.
-As a result we see, that while for the DD method, a S=1/2 case for N=16 pulses allows for identification of only 3 spins out of 23, the 5 pulse ESEEM method works with similar success for both S=1 and S=1/2 system. 
-Totally, it is capable of detecting 15-17 nuclear spins, and could be further boosted by usage of DD-ESEEM method with multiple pulses in each sensing block analogous to Fig. \ref{fig:ddeseem}
+To estimate the number of nuclear spins that could be identified, we consider the duration of the free evolution time and the choice of inter-pulse timing $\tau$.
+For a realistic scenario with $T_1 = 1$ s and $T_2 = 100 \mu s$, and sweeping the relevant parameter in 1000 steps, we can estimate the Fisher information matrix for various protocols.
+We will approach the system with a moderate number of pulses, say $N=16$, for the dynamical decoupling sequence, and the simplest 5-pulse ESEEM for the correlation protocol for simplicity of calculation, as analytical expressions are available in that case.
+
+Fig. \ref{fig:cov} illustrates the manifestation of the correlation protocol for a spin 1/2 system in terms of the number of nuclear spins one could estimate with each of the protocols.
+The dots in the $A_{zz}, A_{zx}$ axes represent the points, with an area bounded by the Cramér-Rao bound around each point.
+A nuclear spin is considered detectable (blue points in Fig. \ref{fig:cov}) if the uncertainty of one of the two hyperfine parameters is less than both the absolute value of that parameter and the distance to the closest hyperfine coupling.
+Otherwise, it is considered non-identified (shown as red points). 
+Additionally, covariance between various parameters is calculated from the off-diagonal elements in the inverse Fisher information matrix.
+To illustrate them, an ellipse for each covariance parameter is plotted (colored orange and pink), with two nuclei as the vertices of the ellipse and the small axis size as the Cramér-Rao bound.
+This means that in the case of zero covariance between two nuclei, this ellipse turns into a line.
+To keep the plot readable, for each nuclear spin, only the ellipse with the largest covariance value is plotted.
+These covariances mostly show the crosstalk between different parameters in the presented data and are more strongly present in the DD S=1/2 case. 
+The idea behind the ellipse representation is that when the covariance is larger than the self-variance, the spins become indistinguishable.
+While this crosstalk is not the limiting factor for informational approach, it might be important when considering a realistic estimator.
+It is important to note that this is not strictly the same condition as in experimental identification and is idealized.
+We only consider the available information in the plot, assuming that an optimum estimator for the extraction of that information already exists.
+In reality, one has to additionally assume a non-ideal estimator procedure, which involves the extraction of the hyperfine parameter values from the raw data and is the subject of further work.
+As a result, we see that while for the DD method, a spin 1/2 case for N=16 pulses allows for the identification of only 3 out of 23 nuclear spins, the 5-pulse ESEEM method works with similar success for both S=1 and S=1/2 systems. In total, it is capable of detecting 17-18 out of 23 spins with the constrained measurement time and could be further boosted by using the DD-ESEEM method with multiple pulses in each sensing block analogous to Fig. \ref{fig:ddeseem}.
 
 
 
 \section{Discussion}
 
 %\subsection{Advanced filters}
-In this work we performed a theoretical and numerical comparison of various ESEEM methods for the purpose of characterisation of the nuclear spin clusters around S=1 and S=1/2 type of defects.
-We found, that while for S=1 systems, modified spin echo sequences, e.g. CPMG and XY-N, are most suited for single nuclear spin qubit spectroscopy, for S=1/2 system they are limited in performance. 
-We see, that a correlation type sequences, e.g. 3,5 pulse ESEEM present a more potential for characterisation of a diluted nuclear spin bath, and perform at least similar to the S=1 case. 
-We believe, that this method boast large potential for preliminary screening of nuclear spin clusters for S=1/2 potential qubit candidate systems, such as G-IV defects in diamond. Additionally, our method does not require strong microwave pulse fields, since the pulses do not require to cope with nuclear spin Larmour frequency. 
-In this work we show various sensing methods, while we dont touch the estimator performance. 
-We believe, that this has to be considered in conjuction with adaptive and optimal strategies for controlling the experimental parameters, e.g. Bayessian Optimal Experimental Design or Machine Learning for increasing the efficiency of estimation. 
+In this work, we conducted a theoretical and numerical comparison of various ESEEM methods for characterizing the nuclear spin clusters around S=1 and S=1/2 type of defects.
+We found that for S=1 systems, modified spin echo sequences such as CPMG and XY-N are most suited for single nuclear spin qubit spectroscopy, but for S=1/2 systems, their performance is limited. On the other hand, correlation-type sequences like 3 and 5 pulse ESEEM show more potential for characterizing a diluted nuclear spin bath and perform at least as well as in the S=1 case.
+We believe that these methods hold significant potential for preliminary screening of nuclear spin clusters for S=1/2 potential qubit candidate systems, such as G-IV defects in diamond.
+Additionally, our method does not require strong microwave pulse fields since the pulses do not need to cope with the nuclear spin Larmor frequency.
+While we explored various sensing methods in this work, we did not delve into estimator performance.
+We believe that this aspect should be considered in conjunction with adaptive and optimal strategies for controlling the experimental parameters, such as Bayesian Optimal Experimental Design or Machine Learning, to increase the efficiency of estimation.
+This could further enhance the characterization capabilities of these methods in practical experimental scenarios.
 
 \section*{Acknowledgments}
 We acknowledge financial support by European Union's Horizon 2020 research and innovation program ASTERIQS under grant No. 820394, European Research Council advanced grant No. 742610, SMel, Federal Ministry of Education and Research (BMBF) project MiLiQuant and Quamapolis, Spinning and QR.X the DFG (FOR 2724,INST 41/1109-1 FUGG), the Max Planck Society, and the Volkswagentiftung. M.Z. thanks Max Planck School of Photonics for financial support.
