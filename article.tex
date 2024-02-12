@@ -75,19 +75,20 @@ superscriptaddress,
  
 \author{J\"org Wrachtrup}
  \affiliation{3rd Physical Institute University of Stuttgart, Germany}%Lines break 
- \affiliation{Max Planck Institute for solid state physics, Stuttgart, Germany}%Lines break 
+ \affiliation{Max Planck Institute for solid state research, Stuttgart, Germany}%Lines break 
  %automatically or can be forced with \\ Third institution, the second for Charlie Author
 
 \date{\today}% It is always \today, today,
              %  but any date may be explicitly specified
 
 \begin{abstract}
-Nuclear spins in solids offer a promising avenue for developing scalable quantum hardware. Leveraging nearby single-color centers, these spins can be efficiently addressed at the single-site level through spin resonance.
-However, characterising individual nuclear spins is quite cumbersome since the utility of characterisation protocols may differ depending on the strength of the hyperfine coupling, necessitating tailored approaches and experimental conditions.
+Nuclear spins in solids offer a promising avenue for developing scalable quantum hardware. 
+Leveraging nearby single-color centers, these spins can be efficiently addressed at the single-site level through spin resonance.
+However, characterising individual nuclear spins is quite cumbersome since the characterisation protocols may differ depending on the strength of the hyperfine coupling, necessitating tailored approaches and experimental conditions.
 While modified electron spin Hahn echoes like CPMG and XY8 pulse sequences are commonly employed, they encounter significant limitations in scenarios involving spin-1/2 systems, strongly coupled spins, or nuclear spin baths comprising distinct isotopes.
 Here, we present a more straightforward approach for determining the hyperfine interactions among each nuclear and the electron spin. 
-This method holds promise across diverse platforms, especially for emerging S=1/2 group IV defects in diamond (e.g., SiV, GeV, SnV, PbV) or silicon (T-centre). 
-We provide a theoretical framework and adapt it for the use with color-centers exhibiting various spins. Through simulations conducted on nuclear spin clusters, we evaluate different protocols and compare their performance using the Fisher information matrix and Cramer Rao bounds.
+This method holds promise across diverse platforms, especially for emerging S=1/2 group IV defects in diamond (e.g., SiV, GeV, SnV, PbV) or silicon (T-centre, P-donors). 
+We provide a theoretical framework and adapt it for color-centers exhibiting various spins. Through simulations conducted on nuclear spin clusters, we evaluate different protocols and compare their performance using the Fisher information matrix and Cramer Rao bounds.
 \end{abstract}
 
 %\keywords{Suggested keywords}%Use showkeys class option if keyword
@@ -95,7 +96,7 @@ We provide a theoretical framework and adapt it for the use with color-centers e
 \maketitle
 %\tableofcontents
 \section{Introduction and background}
-Optically active defects in solids, known as color centers, have been utilized in various quantum applications \cite{awschalom2018quantum}, including quantum networks \cite{pompili2021realization}, quantum sensing \cite{degen2017quantum, meinel2023high}, and quantum registers \cite{bradley2019ten, vorobyov2021quantum, hesselmeier2023measuring, hesselmeier2024high}. 
+Optically active defects in solids, known as color centers, have been utilized in various quantum applications \cite{awschalom2018quantum}, including quantum networks \cite{pompili2021realization}, quantum sensing \cite{degen2017quantum, meinel2023high}, and quantum registers \cite{bradley2019ten, vorobyov2021quantum, hesselmeier2023measuring, hesselmeier2024high, reiner2024high}. 
 
 \begin{figure*}%[htb]
 	\begin{center}
@@ -115,16 +116,16 @@ This method could be applied to defects with a specific configuration of nuclear
 Also, the protocols can only be applied to electron spins with a specific spin multiplicity.
 Depending on the applied protocol for the nuclear spins characterisation, the number of identifiable nuclear spin can be different.
 Electron Spin Echo Envelop Modulation (ESEEM) types of sequences allow access to the highest number of nuclear spins, as the spectroscopy resolution is limited to the longitudinal relaxation time ($T_1$) of the system. (see fig. \ref{fig:1}) \cite{laraoui2013high, vorobyov2022addressing}.
-In particular, we consider the following common examples of nuclear spin registers that are ubiquitous in applications. First, the NV-like case with $S=1$ and weakly coupled nuclear spins, operating at high magnetic fields where $\gamma_n B \gg A_{zx}$ which has been extensively studied in the works of \cite{abobeih2019atomic, taminiau2012detection, Zhao:2014aa}.
-The capability to observe narrow peaks with analytically predictable positions and contrasts enables the solution of the inverse problem concerning the characterization of the coupling between nuclear spins and electron spins. 
+In particular, we consider the following common examples of nuclear spin registers that are ubiquitous in applications. First, the NV-like case with $S=1$ and weakly coupled nuclear spins, operating at high magnetic fields where $\gamma_n B \gg A_{zx}$ which has been extensively studied \cite{abobeih2019atomic, taminiau2012detection, Zhao:2014aa}.
+The capability to observe narrow peaks with analytically predictable positions and contrasts enables the solution of the inverse problem concerning the characterization of the coupling between nuclear and electron spins. 
 The second case (as depicted in Fig. \ref{fig:1}b) corresponds to a scenario similar to the first, but with the presence of a strongly coupled nuclear spin, which obstructs the observation of weakly coupled nuclear spins.
-This case is particularly relevant in situations where, in addition to the weakly coupled register, a strongly coupled nuclear spin is utilized, for instance, for repetitive enhancement of the readout.
+This case is particularly relevant in situations where, in addition to the weakly coupled register, a strongly coupled nuclear spin is utilized, for instance, for repetitive enhancement of readout \cite{neumann2010single}.
 This enhancement is achieved by exploiting the strongly coupled ancilla, which is discernible in electron spin resonance spectra.
 The third case (Fig. \ref{fig:1}c) pertains to the $S=1/2$ scenario, where the lack of offset in the average evolution of the nuclear spin results in its dynamics weakly depending on $A_{zz}$ and only the second order dependence on $A_{zx}$.
 Consequently, this leads to a limited ability to distinguish between multiple nuclear spins and a lack of individual addressability of nuclear spins.
 Lastly, in the case of other material host platforms, a bispecies nuclear spin bath may be observed, where resonance peaks corresponding to different Larmor frequencies of different species further complicate the reconstruction of the Hamiltonian.
 For unambiguous reconstruction of the interactions, additional measurements, such as those at different magnetic field strengths, would be required.
-While the double resonance methods \cite{Bradley:2019aa,zaiser2016enhancing} posses a large promise for nuclear spin spectroscopy, they require additional experimental hardware, and often are not available. 
+While double resonance methods \cite{Bradley:2019aa,zaiser2016enhancing} hold large promise for nuclear spin spectroscopy, they require additional experimental hardware, and often are not available. 
 Thus, in this work, we investigate the limits of electron spin driven schemes, in particular a correlation-type sequences, which could serve as a general framework and hold promise for the reconstruction of the interactions in all of the aforementioned cases.  
  
 
@@ -137,12 +138,12 @@ Thus, in this work, we investigate the limits of electron spin driven schemes, i
 \begin{figure*}%[htbp]
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{pict/dd_compare2.pdf}
-		\caption{Simulated DD signal with 64 $\pi$-pulses for the register reported in  \cite{abobeih2019atomic} consist of 23 nuclear spins, assuming the electron spin is a. spin 1 system b. spin 1/2 system. Simulated Fisher information matrix for the case of the electron spin c. spin 1 system d. spin 1/2 system. The first 23 hyperfine parameters are $A_{zz}$ and the second 23 parameters are $A_{zx}$ of the nuclear spin register.}
+		\caption{Simulated DD signal with 64 $\pi$-pulses for the register reported in  \cite{abobeih2019atomic} consisting of 23 nuclear spins, assuming the electron spin is a. spin $S=1$ system b. spin $S=1/2$ system. Simulated Fisher information matrix for the case of the electron spin c. spin $S=1$ system d. spin $S=1/2$ system. The first 23 hyperfine parameters are $A_{zz}$ and the second 23 parameters are $A_{zx}$ of the nuclear spin register.}
 		\label{fig:3}
 	\end{center}
 \end{figure*}
 %%%%%%%%%%%%%%%Í%%%%=================
-We consider a central spin system of \textit{non-interacting} nuclear spins $I=1/2$ coupled to the central electron spin $\boldsymbol{S}$.
+We consider a central spin system of \textit{non-interacting} nuclear spins $I=1/2$ coupled to a central electron spin $\boldsymbol{S}$.
 The central electron spin is manipulated resonantly with microwave pulses, which transfer the population between the two sublevels denoted as $m_s=s_0$ and $m_s = s_1$.
 These two spin sublevels are separated due to the Zeeman effect and/or zero-field splitting, forming a two-level subsystem with an energy splitting of $\omega_a$.
 The Hamiltonian of the system in the secular approximation and in the rotating frame of the applied microwave $\omega_{mw}$ can be written as:
@@ -152,7 +153,7 @@ The Hamiltonian of the system in the secular approximation and in the rotating f
 \end{align}
 Where $\Delta = \omega_a - \omega_{mw}$ is the detuning, $\omega_L^{(k)} =\gamma_n^{(k)} B$ is the nuclear Rabi frequency with $\gamma_n^{(k)}$ being the nuclear spin gyromagnetic ratio and $B$ the external magnetic field, and $A_{zz}$ and $A_{zx}$ are the parallel and perpendicular secular components of the hyperfine tensor, respectively.
 The Hamiltonian is diagonal in the electron spin subspace, thus the Hamiltonian for the nuclear spins could be rewritten in the electron spin subdomains $s_i$ ($i=0,1$).
-The nuclear spin Hamiltonian could be solved for eigenenergies, which determine the precession frequencies of $\omega_i = \sqrt{(\omega_L + s_i A_{zz})^2+ (s_i A_{zx})^2}$, $i=0,1$ along the eigenvector axes $\vec{n}i =(\frac{s_i A{zx}}{\omega_i}, 0, \frac{\omega_L + s_i A_{zz}} {\omega_i})$.
+The nuclear spin Hamiltonian could be solved for eigenenergies, which determine the precession frequencies of $\omega_i = \sqrt{(\omega_L + s_i A_{zz})^2+ (s_i A_{zx})^2}$, $i=0,1$ along the eigenvector axes $\vec{n}_i =(\frac{s_i A{zx}}{\omega_i}, 0, \frac{\omega_L + s_i A_{zz}} {\omega_i})$.
 It is assumed that the pulse duration $t_p$ is short enough ($\omega_L t_p \ll 1$) that the nuclear spin dynamics during this time is negligible.
 For completeness, we start our analysis with the simplest characterization sequence, which is the electron spin Ramsey sequence (free induction decay of the electron).
 The Ramsey signal can be obtained as follows:
@@ -195,7 +196,7 @@ This resonance time can be obtained assuming $\omega_L \gg A_{zz}, A_{zx}$ is sa
 Experimental observation of the resonance times provides valuable information about the nuclear spins.
 For instance, in the case of an NV center, the second-order term $\frac{A_{zx}^2}{\omega_L^2}$ can be neglected, allowing for the direct determination of the $A_{zz}$ hyperfine component from the resonances.
 To proceed with the characterization, Eq. \ref{eq:DD} needs to be further simplified, requiring stronger assumptions.
-Focusing on weakly coupled nuclear spins or high magnetic field situations, the multiplication over all nuclear spins in Eq. \ref{eq:DD} can be approximated by a summation rule, neglecting the higher-order cross-resonance terms:
+Focusing on weakly coupled nuclear spins or high magnetic fields, the multiplication over all nuclear spins in Eq. \ref{eq:DD} can be approximated by a summation rule, neglecting the higher-order cross-resonance terms:
 \small
 \begin{gather}
 	\expval{\sigma_z}_{DD} \approx 1 -2
@@ -212,7 +213,7 @@ Assuming non-overlapping resonance times (which does not hold true for spin 1/2 
 This simplification allows for the determination of the parallel component of the hyperfine interaction for each nuclear spin, possibly in two ways. First, a Lorentzian with a width of $\frac{(s_1-s_0) A_{zx}}{\omega_L^2}$ can be fitted to a dip to identify $A_{zx}$. Second, by keeping track of the minima of a dip while varying the number of pulses, the periodic function $1 - 2 \sin^2\big(\frac{N}{2}\frac{(s_1-s_0) A_{zx}}{\omega_L}\big)$ can be fitted to obtain $A_{zx}$.
 
 Although the Dynamical Decoupling (DD) sequence is well understood and used to characterize nuclear spins, it is not applicable to all systems.
-First, DD only works for defects with high magnetic fields and low hyperfine coupling ($\omega_L \gg A_{zz}, A_{zx}$).
+First, DD only works for defects in high magnetic fields and low hyperfine coupling ($\omega_L \gg A_{zz}, A_{zx}$).
 Second, the signal is limited to the electron spin $T_2$, which only gradually approaches $T_1$.
 Third, signal analysis is rather complicated and time-consuming; one has to collect enough data to ensure that no two nuclear spins overlap in the signal.
 Fourth, this sequence does not work for spin 1/2 systems, such as group IV defects in diamond, since the parallel component of the hyperfine coupling cancels their effect on the first order electron spin signal.
@@ -220,16 +221,16 @@ Hence, the resonance signal depends on the second order of the perpendicular hyp
 \begin{figure*}[htbp]
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{pict/eseem_compare2.pdf}
-		\caption{Simulated FFT of ESEEM signal with a zoom into weakly coupled nuclear spins for the register reported \cite{abobeih2019atomic} consist of 23 nuclear spins, assuming the electron spin 1/2 system. b. Enhancing the sensitivity to weakly coupled spins by increasing number of $\pi$-pulses to $N=72$ pulses in each entangling period. $\tau$ is set to the Larmor bright spot. Simulated Fisher information for the case of the electron spin c. one d. one-half system. The first 23 hyperfine parameters are $A_{zz}$ and the second 23 parameters are $A_{zx}$ of the nuclear spin register.}
+		\caption{Simulated FFT of ESEEM signal with a zoom into weakly coupled nuclear spins for the register reported \cite{abobeih2019atomic} consist of 23 nuclear spins, assuming the electron spin $S=1/2$ system. b. Enhancing the sensitivity to weakly coupled spins by increasing number of $\pi$-pulses to $N=72$ pulses in each entangling period. $\tau$ is set to the Larmor bright spot. Simulated Fisher information for the case of the electron spin c. $S=1$ d. $S=1/2$ system. The first 23 hyperfine parameters are $A_{zz}$ and the second 23 parameters are $A_{zx}$ of the nuclear spin register.}
 		\label{fig:ddeseem}
 	\end{center}
 \end{figure*}
 
 
-In this work, we consider the 23-nuclear spin cluster characterized in paper \cite{abobeih2019atomic} as a realistic case for our comparison.
+In this work, we consider the 23-nuclear spin cluster characterized previously \cite{abobeih2019atomic} as a realistic case for our comparison.
 First, we apply this to the dynamical decoupling sequence and visualize the obtained results. Fig \ref{fig:3} compares the DD signal for the same nuclear spin register but different defects in diamond.
 An intuitive description of the sensitivity of a sequence to the variation of hyperfine coupling could be estimated by considering the width and sensitivity of the position of the resonances.
-First, we consider the case of an NV center in diamond. The width of a dip is $\delta \tau = \frac{A_{zx}}{\omega_L^2}$. Taking the derivative of the resonance time, we define the sensitivity of the longitudinal hyperfine coupling as follows, using Eq. \ref{eq:resonance} to simplify:
+First, we consider the case of an NV center in diamond. The width of a dip is $\delta \tau = \frac{A_{zx}}{\omega_L^2}$. Taking the derivative of the resonance time, we define the sensitivity of the longitudinal hyperfine coupling, using Eq. \ref{eq:resonance} to simplify:
 \begin{gather}
 	\delta A_{zz} \equiv \frac{\delta \tau}{\abs{\frac{\partial \tau_p}{\partial A_{zz}}}} = \frac{2}{\tau_p} \frac{A_{zx}}{\omega_L} \ge \frac{4}{T_2^{HE}} \frac{A_{zx}}{\omega_L}
 \end{gather}
@@ -244,7 +245,7 @@ Assuming typical values of $T_2^{HE} = 100$ $\mu$s, a nuclear spin can be distin
 \begin{figure*}%[htbp]
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{pict/fig5.png}
-		\caption{a. FFT of ESEEM signal for $\tau$ from 10 $\mu$s to 500 $\mu$s with the step of 10 $\mu$s b. 2D correlation of each frequency for different $\tau$.}
+		\caption{a. FFT of ESEEM signal for $\tau$ from 10 $\mu$s to 500 $\mu$s with a step of 10 $\mu$s b. 2D correlation of each frequency for different $\tau$.}
 		\label{fig:4}
 	\end{center}
 \end{figure*}
@@ -254,7 +255,7 @@ The Fisher Information Matrix is estimated for the probability to measure state 
 \begin{equation}
 	F_{ij}(\textbf{A})=\sum_\tau \frac{\partial p(0, \tau, \textbf{A})}{\partial A_i}\frac{\partial p(0, \tau, \textbf{A})}{ \partial A_j} \frac{1}{p (1-p)}.
 \end{equation}
-For the typical case of an NV center with $S=1$, since all the nuclear spin resonances are clearly resolved, the Fisher Information Matrix takes a diagonal shape, revealing low covariance between the various nuclear spin resonances.
+For the typical case of an NV center with $S=1$, since all the nuclear spin resonances are clearly resolved, the Fisher Information Matrix takes a diagonal shape, revealing low covariances between the various nuclear spin resonances.
 There is crosstalk between $A_{zz}$ and $A_{zx}$ for a nuclear spin, as the position of the peaks depends on both values.
 The Fisher Information provides a bound for the precision of parameter estimation, known as the Cramér–Rao bound: 
 \begin{equation}
@@ -272,7 +273,7 @@ During the free evolution time, each nuclear spin oscillates with one of two res
 \begin{figure*}%[htbp]
 	\begin{center}
 		\includegraphics[width=1.0\textwidth]{pict/cov_compare_vad.pdf}
-		\caption{Visualisation of the CramerRao bound for various protocols on existing nuclear spin dataset from \cite{abobeih2019atomic}}
+		\caption{Visualisation of the CramerRao bound for various protocols on an existing nuclear spin dataset from \cite{abobeih2019atomic}}
 		\label{fig:cov}
 	\end{center}
 \end{figure*}
@@ -309,8 +310,8 @@ The idea behind the ellipse representation is that when the covariance is larger
 While this crosstalk is not the limiting factor for informational approach, it might be important when considering a realistic estimator.
 It is important to note that this is not strictly the same condition as in experimental identification and is idealized.
 We only consider the available information in the plot, assuming that an optimum estimator for the extraction of that information already exists.
-In reality, one has to additionally assume a non-ideal estimator procedure, which involves the extraction of the hyperfine parameter values from the raw data and is the subject of further work.
-As a result, we see that while for the DD method, a spin 1/2 case for N=16 pulses allows for the identification of only 3 out of 23 nuclear spins, the 5-pulse ESEEM method works with similar success for both S=1 and S=1/2 systems. In total, it is capable of detecting 17-18 out of 23 spins with the constrained measurement time and could be further boosted by using the DD-ESEEM method with multiple pulses in each sensing block analogous to Fig. \ref{fig:ddeseem}.
+In reality, one has to additionally assume a non-ideal estimator procedure, which involves the extraction of the hyperfine parameter values from the raw data. But this is the subject of further work.
+As a result, we see that while for the DD method, a spin 1/2 case for N=16 pulses allows for the identification of only 3 out of 23 nuclear spins, the 5-pulse ESEEM method works with similar success for both S=1 and S=1/2 systems. In total, it is capable of detecting 17-18 out of 23 spins within the measurement time constrain. This could be further boosted by using the DD-ESEEM method with multiple pulses in each sensing block analogous to Fig. \ref{fig:ddeseem}.
 
 
 
@@ -321,12 +322,12 @@ In this work, we conducted a theoretical and numerical comparison of various ESE
 We found that for S=1 systems, modified spin echo sequences such as CPMG and XY-N are most suited for single nuclear spin qubit spectroscopy, but for S=1/2 systems, their performance is limited. On the other hand, correlation-type sequences like 3 and 5 pulse ESEEM show more potential for characterizing a diluted nuclear spin bath and perform at least as well as in the S=1 case.
 We believe that these methods hold significant potential for preliminary screening of nuclear spin clusters for S=1/2 potential qubit candidate systems, such as G-IV defects in diamond.
 Additionally, our method does not require strong microwave pulse fields since the pulses do not need to cope with the nuclear spin Larmor frequency.
-While we explored various sensing methods in this work, we did not delve into estimator performance.
+While we explore various sensing methods in this work, we did not delve into estimator performance.
 We believe that this aspect should be considered in conjunction with adaptive and optimal strategies for controlling the experimental parameters, such as Bayesian Optimal Experimental Design or Machine Learning, to increase the efficiency of estimation.
 This could further enhance the characterization capabilities of these methods in practical experimental scenarios.
 
 \section*{Acknowledgments}
-We acknowledge financial support by European Union's Horizon 2020 research and innovation program ASTERIQS under grant No. 820394, European Research Council advanced grant No. 742610, SMel, Federal Ministry of Education and Research (BMBF) project MiLiQuant and Quamapolis, Spinning and QR.X the DFG (FOR 2724,INST 41/1109-1 FUGG), the Max Planck Society, and the Volkswagentiftung. M.Z. thanks Max Planck School of Photonics for financial support.
+We acknowledge financial support by European Union's Horizon 2020 research and innovation program ASTERIQS under grant No. 820394 as well as Spinus, Federal Ministry of Education and Research (BMBF) project MiLiQuant and Quamapolis, Spinning and QR.X the DFG (FOR 2724, INST 41/1109-1 FUGG), the Max Planck Society, and the Volkswagentiftung. M.Z. thanks Max Planck School of Photonics for financial support.
 
 
 %%%%%%%%%%%%%=========
