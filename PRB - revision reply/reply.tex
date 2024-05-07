@@ -1,0 +1,183 @@
+
+\documentclass[12pt]{amsart}
+\usepackage{geometry} % see geometry.pdf on how to lay out the page. There's lots.
+\usepackage[dvipsnames]{xcolor}
+\geometry{a4paper} % or letter or a5paper or ... etc
+% \geometry{landscape} % rotated page geometry
+
+% See the ``Article customise'' template for come common customisations
+% delete this line to display the current date
+
+%%% BEGIN DOCUMENT
+\begin{document}
+	\color{red} \section{ Report of the First Referee}\\
+	The authors compare nuclear spin characterization using ESEEM and DD
+	sequences. Overall the work seems timely and appropriate for
+	publication in PRB.
+	
+	However, I think some sections and figures would benefit from further
+	revisions. Below is a list of comments and inquiries:
+	
+	1) In some places the authors refer to second order hyperfine
+	coupling, I assume this is in regard to the Zeeman splitting of the
+	central spin but this could be clarified in the text.
+	
+	2) I am not sure whether this is intentional but the equations miss
+	punctuation and equation references the brackets.
+	
+	3) Some equations are hard to read because they overlap with the text
+	of the next column.
+	
+	4) Related to 1) additional details to derive the Hamiltonian in Eq.
+	(1) would be helpful, for instance when does this equation hold, I
+	believe $\Delta \gg$ hyperfine elements is assumed to neglect coupling to Sx and
+	Sy and then the nuclear spins are rotated such that there occur no
+	terms with Iy? Is there a difference in the derivation for S=1 and
+	S=1/2? Maybe an appendix applying the secular approximation and the
+	appropriate rotation to the frame leading to this form would be
+	helpful for future readers.
+	
+	5) Fig. 2 misses the labels for the subfigures the same applies to
+	Fig. 3 where I think that additionally the heading of the top left
+	panel should read "Electron Spin 1".
+	
+	6) In Eq. (2) it would help to provide the state that is used for the
+	calculation as well as an intuition why it is sufficient to include
+	the exponential decay term after solving the dynamics (and when this
+	is valid).
+	
+	7) The last paragraph of App. B is very hard to read and would benefit
+	from some work on the language.
+	
+	8) Could the authors comment on whether they have an intuition whether
+	adapted approaches would be feasible for systems with an additional
+	central spin like the (15N)V center or defects with even larger spin
+	like vanadium defects in silicon carbide?
+	
+	9) Could the authors provide a short comment comparing to entanglement
+	based approaches for nuclear spin control, e.g.,
+	https://www.nature.com/articles/ncomms14660?
+	
+	Concluding, if the above points are addressed, I deem the article
+	suited for publication within PRB.
+	
+	\color{black} \section{Reply to the First Referee}\\
+	We appreciate the comments made by the referee. We clarify each point as follows:
+	
+	1. Second order hyperfine couplings means terms like $(\frac{A_{zz}}{\omega_L})^2$ and $(\frac{A_{zx}}{\omega_L})^2$. This is stated in the sentence:
+	((... the second-order term $\frac{A_{zx}^2}{\omega_L^2}$ can be neglected ... ))
+	
+	To clarify this point, we add the following explanation to the text:
+	((... \textcolor{blue}{which is the inner product of precession axes of a nuclear spin condition on the electron spin sublevel. This expression indicates the advantage of using DD sequence for sublevels where either $s_0$ or $s_1$ is zero, only first order parallel hyperfine coupling $\frac{A_{zz}}{\omega_L}$ play a role. On the other hand, in spin-1/2 systems ($s_0=-\frac{1}{2}$ and $s_1=\frac{1}{2}$), the first order hyperfine coupling vanishes and only second order parallel hyperfine coupling $(\frac{A_{zz}}{\omega_L})^2$ and second order perpendicular hyperfine coupling $(\frac{A_{zx}}{\omega_L})^2$ remain present. This indicates weak sensitivity of DD sequence on different nuclear spins}...))
+	
+	2.
+	
+	3.
+	
+	4.
+	
+	5.
+	
+	6.
+	
+	7.
+	
+	8.
+	
+	9.
+
+	\color{red} \section{ Report of the Second Referee}
+	The authors propose a blueprint for efficient nuclear spin
+	characterization with color centers. The authors claim that they
+	propose a more straightforward approach for determining the hyperfine
+	interactions among each nuclear and the electron spin. The manuscript
+	is written clearly by comparing dynamical decoupling (DD) and Electron
+	Spin Echo Envelop Modulation (ESEEM), the numerical results are valid
+	and may could be of use in other future experiments. I think the
+	results obtained by the authors are of interest for Phys. Rev. B
+	readers, so I support the publication in its present form.
+	
+	As some minor remarks which the authors may take into account to
+	beatify their study further, I would like to mention:
+	
+	1) There are no a, b, c and d in Fig. 2, Fig. 3 and Fig.5. There is
+	lack of definitions and units of “Hyperfine Parameters” in abscissa in
+	Fig. 2 and Fig. 3. This sentence is confusing: “The first 23 hyperfine
+	parameters are Azz and the second 23 parameters are Azx of the nuclear
+	spin register.” What are the specific meanings of hyperfine parameters
+	along horizontal axis and vertical axis in Figs2?
+	
+	2) Are there any reasons for the exponential decay part in gray for
+	almost all the equations? It is a little bit strange, and the
+	exponential decay part looks not in same size as well.
+	
+	3) Styles of references [9], [14], [19] and [21] are not uniform with
+	other references.
+	
+	\color{black} \section{Reply to the Second Referee}
+	
+	1.
+	
+	2.
+	
+	3.
+	
+
+	\color{red} \section{Report of the Third Referee}
+	Zahedian et al. present a theoretical study on a the appropriateness of
+	various methods of nuclear spin spectroscopy using electron spins in
+	solid state materials as probes. They compare dynamical decoupling
+	based techniques and consider how using a spin-1/2 system as a probe
+	differs to the more common case of a spin-1 (such as the NV center in
+	diamond). As the authors note, spin-1/2 electron spin systems are
+	emerging in materials such as diamond and silicon and so expanding the
+	existing nuclear spectroscopy machinery to this case will be of
+	interest to the community.
+	
+	The paper and its main result that correlation-style dynamical
+	decoupling sequences are most appropriate for performing nuclear spin
+	spectroscopy with spin-1/2 electron spin systems should be of interest
+	to the community, and so in principle I think it is appropriate to
+	publish in PRB. In parts I found the arguments a little unclear and so
+	I would recommend some minor revisions before publication. Some
+	specific points:
+	
+	1) It is not clear to me why the correlation sequence performs much
+	worse for the spin-1 probe (comparing Fig 2(c) and 3(c)) and there is
+	not much discussion of this point in the text. This result also seems
+	to conflict with Fig 5. It also does not seem like the spin-1 probe
+	should be worse than spin-1/2 in this case. Also, what are the
+	parameters used to generate the plots Fig 3c,d - is it simulating the
+	72 pulse DDESEEM?
+	
+	2) It would be interesting to know, roughly, how the results of e.g.
+	Fig 5 scale with properties such as probe T1 and T2. Does this
+	strongly impact the optimal sequence choice? Some spin-1/2 systems may
+	have short T1 times as they are able to cross relax with other g=2
+	spins present in the crystal (or on the diamond surface, for
+	instance).
+	
+	3) One goal of mapping e.g. a nuclear spin cluster is to also use the
+	central electron spin to selectively manipulate individual nuclear
+	spins to use as ancillae or implement quantum information protocols.
+	Is it straightforward that the spectral resolution offered by the
+	correlation style measurements also allow this sort of control? At
+	minimum the extra time overhead from using the longer sequence would
+	need to be considered in practice. Could the authors comment on the
+	outlook here?
+	
+	4) Minor comment on figures: some labels are missing and fig 4 appears
+	a bit blurry.
+	
+	\color{black} \section{ Reply to the Third Referee}
+	
+	1.
+	
+	2.
+	
+	3.
+	
+	4.
+
+
+\end{document}
