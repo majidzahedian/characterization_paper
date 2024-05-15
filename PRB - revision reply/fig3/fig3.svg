@@ -62,9 +62,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="182.10249"
-     inkscape:cy="998.9461"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="547.018"
+     inkscape:cy="913.07547"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -90,7 +90,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       transform="matrix(0.35760347,0,0,-0.35277777,53.007095,39.722651)"
+       transform="matrix(0.37844386,0,0,-0.35277777,51.321621,40.251818)"
        id="g3949-0"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96">
@@ -101,7 +101,7 @@
          d="M 80.875336,-43.487068 H 332.87534 V 112.25749 H 80.875336 Z" />
     </g>
     <g
-       transform="matrix(0.35277777,0,0,-0.35277777,0.07703704,55.062364)"
+       transform="matrix(0.35277777,0,0,-0.35277777,0.07703704,55.591531)"
        id="g3949"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96">
@@ -436,7 +436,7 @@
     </g>
     <g
        id="g5721"
-       transform="translate(1.0583335,-2.4568452)"
+       transform="translate(1.0583335,-1.9276785)"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96">
       <path
@@ -875,27 +875,27 @@
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        x="1.777342"
-       y="5.7643886"
+       y="6.2935553"
        id="text5733"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><tspan
          sodipodi:role="line"
          id="tspan5731"
          x="1.777342"
-         y="5.7643886"
+         y="6.2935553"
          style="font-weight:bold;font-size:6.3499999px;stroke-width:0.26458332">a.</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        x="84.903404"
-       y="6.4191995"
+       y="6.9483662"
        id="text5737"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><tspan
          sodipodi:role="line"
          id="tspan5735"
          x="84.903404"
-         y="6.4191995"
+         y="6.9483662"
          style="font-weight:bold;font-size:6.3499999px;stroke-width:0.26458332">b.</tspan></text>
   </g>
 </svg>
