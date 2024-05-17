@@ -1,4 +1,3 @@
-
 \documentclass[12pt]{amsart}
 \usepackage{geometry} % see geometry.pdf on how to lay out the page. There's lots.
 \usepackage[dvipsnames]{xcolor}
@@ -55,22 +54,22 @@
 	like vanadium defects in silicon carbide?
 	
 	9) Could the authors provide a short comment comparing to entanglement
-	based approaches for nuclear spin control, e.g.,
+	based approaches for nuclear spin control, e.g. : \\
 	https://www.nature.com/articles/ncomms14660?
 	
 	Concluding, if the above points are addressed, I deem the article
 	suited for publication within PRB.
 	
-	\color{black} \section*{Reply to the First Referee}\\
+	\color{black} \section*{Reply to the First Referee}
 	We appreciate the comments made by the referee. We clarify each point as follows:\\
 	
-	1. Second order hyperfine couplings means terms like $(\frac{A_{zz}}{\omega_L})^2$ and $(\frac{A_{zx}}{\omega_L})^2$. This is stated in the sentence:
+	1. We thank the Referee for the usefull comment, indeed we used a confusing  formulation. Second order hyperfine couplings mean terms like $(\frac{A_{zz}}{\omega_L})^2$ and $(\frac{A_{zx}}{\omega_L})^2$ in the resonance conditions. This is stated in the sentence:
 	((... the second-order term $\frac{A_{zx}^2}{\omega_L^2}$ can be neglected ... ))
-	
+	We replaced this terms by "second order correction of the resonance with respect to hyperfine parameters", which in our opinion better reflects the meaning. 
 	To clarify this point, we add the following explanation to the text:\\
 	((... \textcolor{blue}{Each nuclear spin is identified with two hyperfine parameters $A_{zz}$ and $A_{zx}$, which shows coupling to the central electron spin. Hence, characterizing this 23-nuclear spins requires identifying 56 hyperfine coupling parameters.} ...)) \\
 	
-	((... \textcolor{blue}{which is the inner product of precession axes of a nuclear spin condition on the electron spin sublevel. This expression indicates the advantage of using DD sequence for sublevels where either $s_0$ or $s_1$ is zero, only first order parallel hyperfine coupling $\frac{A_{zz}}{\omega_L}$ play a role. On the other hand, in spin-1/2 systems ($s_0=-\frac{1}{2}$ and $s_1=\frac{1}{2}$), the first order hyperfine coupling vanishes and only second order parallel hyperfine coupling $(\frac{A_{zz}}{\omega_L})^2$ and second order perpendicular hyperfine coupling $(\frac{A_{zx}}{\omega_L})^2$ remain present. This indicates weak sensitivity of DD sequence on different nuclear spins}...))\\
+	((...\textcolor{blue}{which is the inner product of precession axes of a nuclear spin condition on the electron spin sublevel. This expression indicates the advantage of using DD sequence for sublevels where either $s_0$ or $s_1$ is zero, only first order parallel hyperfine coupling $\frac{A_{zz}}{\omega_L}$ play a role. On the other hand, in spin-1/2 systems ($s_0=-\frac{1}{2}$ and $s_1=\frac{1}{2}$), the first order perturbation correction with respect to hyperfine coupling vanishes and only second order perturbation term with respect to parallel $(\frac{A_{zz}}{\omega_L})^2$  and perpendicular coupling $(\frac{A_{zx}}{\omega_L})^2$ remain present. This indicates weak sensitivity of DD sequence on different nuclear spins}...))\\
 	
 	Also the following text is added to the caption of Fig 2:\\
 	((... \textcolor{blue}{It indicates the covariance between two parameters. The main diagonal appears as each parameter is correlated with itself. The side-diagonals indicate the two hyperfine parameters that belong to the same nuclei.} ...)) \\
@@ -81,21 +80,25 @@
 	
 	3. We thank the referee for noting this point. We fixed this issue in Eq. 4 and Eq. 7  \\
 	
-	4. The Hamiltonian in Eq. 1 is very well-understood in this community [ref here]. The Hamiltonian conventionally is written in the rotating frame of applied microwave and consist of Electron and nuclear spin Zeeman energy and dipole interaction between them. As it is mentioned in the text, the secular approximation is considered so terms like $S_x, S_y$ do not appear. Traditionally, the nuclear spins' frame are rotated such that $I_y$ term do not appear. This Hamiltonian applied to any two-level system, e.g., this could be any two spin sublevels in Silicon Carbide (S=3/2)\\
+	4. \textcolor{red}{We need to either add a reference or a small paragrah saying why Secular is applied and a $U_{int}$ to rotation frame, now it is too rude answer}The Hamiltonian in Eq. 1 is very well-understood in this community [ref here]. The Hamiltonian conventionally is written in the rotating frame of applied microwave and consist of Electron and nuclear spin Zeeman energy and dipole interaction between them. As it is mentioned in the text, the secular approximation is considered so terms like $S_x, S_y$ do not appear. Traditionally, the nuclear spins' frame are rotated such that $I_y$ term do not appear. This Hamiltonian applied to any two-level system, e.g., this could be any two spin sublevels in Silicon Carbide (S=3/2)\\
 	
-	5. We thank the referee for pointing out labels for subfigures (pdf is corrected but latex does not show). We fixed this issue. In Fig. 3, we are discussing 5pESEEM sequence mostly for Electron spin 1/2 system. We did not include FFT of 5pESEEM sequence for spin 1 system because it works just as good as DD sequence, and does not bring any additional information. However, the Fisher information obtained for spin 1 system in Fig. 3c is good metrics to compare with the result of electron spin 1/2 system in Fig 3d.  \\
+	5. We thank the referee for pointing out labels for subfigures (pdf is corrected but latex does not show). In the revised version of the manuscript we fixed this issue. 
+	In Fig. 3, we are discussing 5pESEEM sequence mostly for Electron spin 1/2 system. 
+	We did not include FFT of 5pESEEM sequence for spin 1 system because it works just as good as DD sequence, and does not bring any additional information. 
+	However, we believe, that the Fisher information obtained for spin 1 system in Fig. 3c is good metrics to compare with the result of electron spin 1/2 system in Fig 3d.  \\
 	
-	6. The initial state for the Ramsey sequence can be any of the two sublevels of spin system. Indeed, the gray exponential decay is not sufficient to describe spin relaxations as mentioned in the text, but it shows the time scale of the decay. We thank the referee for this point and we decided to remove this exponential decay to avoid confusion. \\
+	6. \textcolor{red}{Initial state should be initialised into superposition of two eigenstates, s0,s1, which can be any, right?}The initial state for the Ramsey sequence can be any of the two sub-levels of spin system. Indeed, the grey exponential decay is not sufficient to describe spin relaxations as mentioned in the text, but it shows the time scale of the decay. We thank the referee for this point and we decided to remove this exponential decay to avoid confusion. We have added this correction to the main text.
+	\textcolor{blue}{((..initial state is XXX..))}.\\
 	 
 	7. We thank the referee for pointing out this issue. We added more explanation to the last paragraph in the Appendix B.
 	
 	((...\textcolor{blue}{The blind spot term depends on both $\tau_1$ and $\tau_2$. It means if one resonant frequency is blinded, the other resonant frequency and all the multiple quantum resonances also vanishes. This can be used as a manifestation that which two peaks in the frequency spectrum are originating from the same nuclei. In other words, choosing $\tau$ such that a particular resonant frequency in the spectrum is blinded, the other resonant frequency of the same nuclear spin will also be blinded and both of them disappear from the frequency spectrum together. Moreover, this is very helpful especially in the presence of strongly coupled nuclear spin that suppress other nuclei. By sweeping $\tau_1$ and $\tau_2$, one can go through different bright and blind spots of each nuclear spin, and observe correlations between different peaks.}...))\\
 	
-	8. This equations are valid as long as the condition stated before Eq. 1 are valid. Most importantly secular approximation is crucial, and also the nuclear spin should be spin 1/2 like Carbons. The Spin of electron spin is not play an important role since they can be well separated and pulses resonant with only an effective two level system can be considered.\\
+	8. This equations are valid as long as the condition stated before Eq. 1 are valid. Most importantly secular approximation is crucial, and also the nuclear spin should be spin 1/2 like Carbons. The spin of electron spin is not playing an important role since various allowed microwave transitions can be well separated and pulses resonant with only an effective two level system can be considered.\\
 	
-	9. In this work, we address nuclear spins only with microwave driving of the electron spin (did we mention this in the text?). Applying another radio frequency (RF) driving adds another experimental challenge to the problem. In this case, RF spectroscopy to find and drive individual nuclear spins is required, which can add the required time to image nuclear spins.\\
+	9. In this work, we address nuclear spins only with microwave driving of the electron spin (\textcolor{red}{did we mention this in the text?}). Applying another radio frequency (RF) driving adds another experimental challenge to the problem and goes beyond the scope of this work. In this case, RF spectroscopy to find and drive individual nuclear spins is required, which can add the required time to image nuclear spins, which was successfully demonstrated in various works for spin 1, 3/2,  \cite{DDRF, ENDOR, SSRV2}. We believe that it will as well work well for spin $S=1/2$, as it probes the transition frequency of the nuclear spin in $m_s=1/2$ or $m_s=-1/2$ subdomains, making it sensitive to the first order of the $A_{zz}$ coupling. Comparison of various RF assisted protocols goes beyond the scope of the current work and requires further investigation.\\
 
-	\color{red} \section{ Report of the Second Referee}
+	\color{red} \section{Report of the Second Referee}
 	The authors propose a blueprint for efficient nuclear spin
 	characterization with color centers. The authors claim that they
 	propose a more straightforward approach for determining the hyperfine
@@ -128,9 +131,9 @@
 	1. We thank the referee for pointing out labels for subfigures (pdf is corrected but latex does not show). We fixed this issue. Fig. 5 does not require subfigure labelling. We provided more explanation regarding the hyperfine coupling parameters in the text:
 	((... \textcolor{blue}{the summation is over $\tau$, the pulse timing used in the sequence, and $A$ is the array including all hyperfine coupling parameters. For the considered nuclear spin register, $A$ includes 56 hyperfine coupling parameters, the first 23 parameters are $A_{zz}$ of different nuclear spins and the second 23 parameters are $A_{zx}$ respectively, resulting in the Fisher information as a 56 by 56 Matrix.} ...)) \\   
 	
-	2. Indeed, the gray exponential decay is not sufficient to describe spin relaxations as mentioned in the text, but it shows the time scale of the decay. We thank the referee for this point and we decided to remove this exponential decay to avoid confusion.\\
+	2. Indeed, the grey exponential decay is not sufficient to describe spin relaxations as mentioned in the text, but it shows the time scale of the decay. We thank the referee for this point and we decided to remove this exponential decay to avoid confusion.\\
 	
-	3.
+	3. We thank the referee for noting this and fixed the references in the revised version of the manuscript. 
 	
 
 	\color{red} \section{Report of the Third Referee}
@@ -181,6 +184,7 @@
 	
 	\color{black} \section*{ Reply to the Third Referee}
 	We appreciate the comments made by the referee. We clarify each point as follows:\\
+	
 	1. Characterization of spin-1 system with both DD and DDESEEM works similarly well. Indeed, it is important to observe the diagonal and side-diagonals are distinguishable from in the Fisher Information matrix, which in both Fig. 2c and 3c are clear. However, the color scale is levelled such that in each sequence, the perfomance of spin 1/2 can be compared with spin 1. Fig. 3c, 3d are Fisher Information matrix simulated for 5pESEEM. For clarity we added this point in the caption.\\
 	
 	2. $T_1$ limits the resolution of the frequency spectrum. However, $T_2$ limits the weakest nuclear spin that can be addressed. Ideally, by increasing number of $\pi$ pulses, this limit can be pushed toward $T_1$. (did we mention this in the text?) While short transverse relaxation time tolerable, having short longitudinal relaxation time basically means that nuclear spin is not a desired quantum memory. \\
