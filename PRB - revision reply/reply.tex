@@ -80,14 +80,16 @@
 	
 	3. We thank the referee for noting this point. We fixed this issue in Eq. 4 and Eq. 7  \\
 	
-	4. \textcolor{red}{We need to either add a reference or a small paragrah saying why Secular is applied and a $U_{int}$ to rotation frame, now it is too rude answer}The Hamiltonian in Eq. 1 is very well-understood in this community [ref here]. The Hamiltonian conventionally is written in the rotating frame of applied microwave and consist of Electron and nuclear spin Zeeman energy and dipole interaction between them. As it is mentioned in the text, the secular approximation is considered so terms like $S_x, S_y$ do not appear. Traditionally, the nuclear spins' frame are rotated such that $I_y$ term do not appear. This Hamiltonian applied to any two-level system, e.g., this could be any two spin sublevels in Silicon Carbide (S=3/2)\\
+	4. \textcolor{brown}{We thank the referee to point out that this Hamiltonian needs further explanation. We added an Appendix to explain the derivation of this Hamiltonian.} The Hamiltonian conventionally is written in the rotating frame of applied microwave and consist of Electron and nuclear spin Zeeman energy and dipole interaction between them. As it is mentioned in the text, the secular approximation is considered so terms like $S_x, S_y$ do not appear. Traditionally, the nuclear spins' frame are rotated such that $I_y$ term do not appear. This Hamiltonian applied to any two-level system, e.g., this could be any two spin sublevels in Silicon Carbide (S=3/2)\\
 	
 	5. We thank the referee for pointing out labels for subfigures (pdf is corrected but latex does not show). In the revised version of the manuscript we fixed this issue. 
 	In Fig. 3, we are discussing 5pESEEM sequence mostly for Electron spin 1/2 system. 
 	We did not include FFT of 5pESEEM sequence for spin 1 system because it works just as good as DD sequence, and does not bring any additional information. 
 	However, we believe, that the Fisher information obtained for spin 1 system in Fig. 3c is good metrics to compare with the result of electron spin 1/2 system in Fig 3d.  \\
 	
-	6. \textcolor{red}{Initial state should be initialised into superposition of two eigenstates, s0,s1, which can be any, right?}The initial state for the Ramsey sequence can be any of the two sub-levels of spin system. Indeed, the grey exponential decay is not sufficient to describe spin relaxations as mentioned in the text, but it shows the time scale of the decay. We thank the referee for this point and we decided to remove this exponential decay to avoid confusion. We have added this correction to the main text.
+	6. \textcolor{red}{Initial state should be initialised into superposition of two eigenstates, s0,s1, which can be any, right?}
+	\textcolor{brown}{No, the initial state is always one of s0 or s1, with the first pi-half pulse, the superposition is created. Or one can say I know how to generate an initial superposition state, then the first pi-half pulse is not needed.}
+	The initial state for the Ramsey sequence can be any of the two sub-levels of spin system. Indeed, the grey exponential decay is not sufficient to describe spin relaxations as mentioned in the text, but it shows the time scale of the decay. We thank the referee for this point and we decided to remove this exponential decay to avoid confusion. We have added this correction to the main text.
 	\textcolor{blue}{((..initial state is XXX..))}.\\
 	 
 	7. We thank the referee for pointing out this issue. We added more explanation to the last paragraph in the Appendix B.
@@ -96,7 +98,9 @@
 	
 	8. This equations are valid as long as the condition stated before Eq. 1 are valid. Most importantly secular approximation is crucial, and also the nuclear spin should be spin 1/2 like Carbons. The spin of electron spin is not playing an important role since various allowed microwave transitions can be well separated and pulses resonant with only an effective two level system can be considered.\\
 	
-	9. In this work, we address nuclear spins only with microwave driving of the electron spin (\textcolor{red}{did we mention this in the text?}). Applying another radio frequency (RF) driving adds another experimental challenge to the problem and goes beyond the scope of this work. In this case, RF spectroscopy to find and drive individual nuclear spins is required, which can add the required time to image nuclear spins, which was successfully demonstrated in various works for spin 1, 3/2,  \cite{DDRF, ENDOR, SSRV2}. We believe that it will as well work well for spin $S=1/2$, as it probes the transition frequency of the nuclear spin in $m_s=1/2$ or $m_s=-1/2$ subdomains, making it sensitive to the first order of the $A_{zz}$ coupling. Comparison of various RF assisted protocols goes beyond the scope of the current work and requires further investigation.\\
+	9. In this work, we address nuclear spins only with microwave driving of the electron spin as we mentioned in the text:\\
+	\textcolor{brown}{((While double resonance methods hold large promise for nuclear spin spectroscopy, they require additional experimental hardware, and often are not available.))}
+	Applying another radio frequency (RF) driving adds another experimental challenge to the problem and goes beyond the scope of this work. In this case, RF spectroscopy to find and drive individual nuclear spins is required, which can add the required time to image nuclear spins, which was successfully demonstrated in various works for spin 1, 3/2,  \cite{DDRF, ENDOR, SSRV2}. We believe that it will as well work well for spin $S=1/2$, as it probes the transition frequency of the nuclear spin in $m_s=1/2$ or $m_s=-1/2$ subdomains, making it sensitive to the first order of the $A_{zz}$ coupling. Comparison of various RF assisted protocols goes beyond the scope of the current work and requires further investigation.\\
 
 	\color{red} \section{Report of the Second Referee}
 	The authors propose a blueprint for efficient nuclear spin
@@ -185,7 +189,7 @@
 	\color{black} \section*{ Reply to the Third Referee}
 	We appreciate the comments made by the referee. We clarify each point as follows:\\
 	
-	1. Characterization of spin-1 system with both DD and DDESEEM works similarly well. Indeed, it is important to observe the diagonal and side-diagonals are distinguishable from in the Fisher Information matrix, which in both Fig. 2c and 3c are clear. However, the color scale is levelled such that in each sequence, the perfomance of spin 1/2 can be compared with spin 1. Fig. 3c, 3d are Fisher Information matrix simulated for 5pESEEM. For clarity we added this point in the caption.\\
+	1. Characterization of spin-1 system with both DD and DDESEEM works similarly well. Indeed, it is important to observe the diagonal and side-diagonals, which are clearly distinguishable in the Fisher Information matrix in both Fig. 2c and 3c. However, the color scale is levelled such that in each sequence, the perfomance of spin 1/2 can be compared with spin 1. Fig. 3c, 3d are Fisher Information matrix simulated for 5pESEEM. For clarity we added this point in the caption.\\
 	
 	2. $T_1$ limits the resolution of the frequency spectrum. However, $T_2$ defines the sensitivity to the weakest nuclear spin that can be addressed. Ideally, by increasing number of $\pi$ pulses, this limit can be pushed toward $T_1$. While short transverse relaxation time tolerable, having short longitudinal relaxation time basically means that the system is not suitable for consideration as a desired quantum memory. \\
 	

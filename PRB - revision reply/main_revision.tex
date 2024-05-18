@@ -39,6 +39,10 @@ superscriptaddress,
 %prstper,
 %floatfix,
 ]{revtex4-2}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
 \usepackage{physics}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{graphicx}% Include figure files
@@ -49,6 +53,14 @@ superscriptaddress,
 %\usepackage[mathlines]{lineno}% Enable numbering of text and display math
 %\linenumbers\relax % Commence numbering lines
 \newcommand{\vvv}[1]{\textcolor{blue}{#1}}
+\newcommand{\kb}[2]{\vert #1 \rangle \langle #2 \vert}
+\newcommand{\caver}[1]{\overline{#1}}
+\setlength{\jot}{8pt}
+%\newcommand{\abs}[1]{\vert #1 \vert}
+\let\oldsubref\subref
+%\renewcommand{\subref}[1]{(\oldsubref{#1})}
+\renewcommand{\vec}[1]{\overrightarrow{#1}}
+\newcommand{\tq}[1]{\textquote{#1}}
 %\usepackage[showframe,%Uncomment any one of the following lines to test 
 %%scale=0.7, marginratio={1:1, 2:3}, ignoreall,% default settings
 %%text={7in,10in},centering,
@@ -147,7 +159,7 @@ Thus, in this work, we investigate the limits of electron spin driven schemes, i
 We consider a central spin system of \textit{non-interacting} nuclear spins $I=1/2$ coupled to a central electron spin $\boldsymbol{S}$.
 The central electron spin is manipulated resonantly with microwave pulses, which transfer the population between the two sublevels denoted as $m_s=s_0$ and $m_s = s_1$.
 These two spin sublevels are separated due to the Zeeman effect and/or zero-field splitting, forming a two-level subsystem with an energy splitting of $\omega_a$.
-The Hamiltonian of the system in the secular approximation and in the rotating frame of the applied microwave $\omega_{mw}$ can be written as:
+The Hamiltonian of the system in the secular approximation and in the rotating frame of the applied microwave $\omega_{mw}$ can be written as \textcolor{blue}{(derivation in \ref{app:Hamiltonian})}:
 \begin{align}
 	H = \Delta S_z + \sum_k (\omega_L^{(k)}  + A_{zz}^{(k)} S_z) I_z^{(k)} + A_{zx}^{(k)} S_z I_x^{(k)}
 	\label{eq:H}
@@ -347,6 +359,38 @@ The details of mentioned sequences in the main text can be found in fig \ref{fig
 		\label{fig:seqs}
 	\end{center}
 \end{figure}
+
+\section{Hamiltonian}
+\label{app:Hamiltonian}
+The spin Hamiltonian for many color centers can be written as \cite{schweiger2001principles}:
+\begin{gather}
+	H = \mathbf{D}^\intercal \mathbf{S} \mathbf{D} + \beta_e \mathbf{B}^\intercal \mathbf{g} \mathbf{S} + \beta_n \sum_{k=1}^m g_n^{(k)}  \mathbf{B}^\intercal \mathbf{I}^{(k)} \notag \\
+	+ \sum_{I_k>1/2} (\mathbf{I}^{\intercal} \mathbf{P} \mathbf{I})^{(k)} + \sum_{k=1}^m g_n^{(k)} (\mathbf{S}^\intercal \mathbf{A} \mathbf{I})^{(k)}
+\end{gather}
+Where $\mathbf{S}$ and $\mathbf{I}^{(k)}$ are electron and nuclear spin vector operators, $\mathbf{D}$ is zero field splitting tensor, $\mathbf{B}$ is magnetic field vector, $\mathbf{P}$ is nuclear quadrupole tensor, $\mathbf{A}$ is the hyperfine interaction tensor, $\beta_e = \frac{e \hbar}{2m_e}$ and $\beta_n = \frac{-e \hbar}{2m_n}$ are electron and nuclear Bohr magneton. Here, we neglected  nuclear-nuclear interactions. Also, due to axial symmetry, the zero field splitting can be simplified. We assume the magnetic field is only along the symmetry axis, which we denote as z direction. Moreover, the secular terms ($S_zI_x, S_zI_y, S_zI_z$) are just a shift of the energy level that are relevant up to first order, while the non-secular terms ($S_xI_x, S_yI_x, S_zI_z, S_xI_y, S_yI_y, S_zI_y$) mix the electron spin levels, which are largely detuned due to the large zero field splitting. Hence, the non-secular terms of Hamiltonian are neglected. Furthermore, for each nuclear spin, one can go to the xy frame such that $A_{zy}$ term is zero. All in all, the spin Hamiltonian with mentioned considerations can be simplified to:
+\begin{gather}
+	H = D_z S_z^2 + \gamma_e B S_z + \gamma_n B I_z^{(k)} + P_z^{(k)} I_z^{2(k)} \notag \\
+	+ A_{zz}^{(k)} S_z I_z^{(k)} + A_{zx}^{(k)} S_z I_x^{(k)}
+\end{gather}
+The summation over k is omitted due to convenience!
+The coefficient $\gamma_e$ and $\gamma_n$ are electron and nuclear gyromagnetic ratios. The coefficients' values for the case of NV center in diamond are $D_z= 2.87$ GHz, $\gamma_e= -2.802$ MHz/G, $\gamma_n^{(^{13}C)}= 1.07$ kHz/G, $\gamma_n^{(^{14}N)}= 0.31$ kHz/G, $P_z^{(^{14}N)}= -5.04$ MHz. \\
+
+The electron spin in general can take any value, however resonant microwave pulses are applied only for two of the sublevels. Hence, the electron spin is effectively a two-level system. The electron spin occupies two of its sublevels that are denoted as $\ket{0} = \ket{m_s=s_0}$ and $\ket{1} = \ket{m_s=s_1}$; in other words:
+\begin{gather}
+	S_z= \begin{pmatrix} s_1 & 0 \\ 0 & s_0\end{pmatrix}
+\end{gather}
+One can show that $S_z^2 = (s_1+s_0)S_z-s_1s_0 \mathds{1}$. 
+We define the transition frequency between two spin sub-levels of the electron spin as $\omega_a = D_z (s_1+s_0)+\gamma_e B $. Moreover, we note that since we consider nuclei with spin of one half in the system, the nuclear quadrupole term vanishes. The Hamiltonian can be written in terms of Pauli matrices:
+\begin{align}
+	H =\omega_aS_z+ \gamma_n B I_z^{(k)} + A_{zz}^{(k)} S_z I_z^{(k)} + A_{zx}^{(k)} S_z I_x^{(k)}
+\end{align}
+
+The Hamiltonian presented so far does not include the microwave drive field. Indeed, the microwave pulses are assumed to be instantaneous, but considering the drive field, the Hamiltonian  should be written in the rotating frame and assume rotating wave approximation. This frame should be respected for the rest of sequence. Since the rotating frame unitary operator commutes with the $\sigma_z$, the expectation value of this operator in the rotating frame is the same as in the lab frame. Eventually, free evolution Hamiltonian in the rotating frame is written as follows:
+\begin{align}
+	H = \Delta S_z + \sum_k (\omega_L^{(k)}  + A_{zz}^{(k)} S_z) I_z^{(k)} + A_{zx}^{(k)} S_z I_x^{(k)}
+\end{align}
+Where $\Delta = \omega_a - \omega_{mw}$ is the detuning.
+
 
 \section{5pESEEM formula}
 \label{app:5pESEEM} 
@@ -842,6 +886,14 @@ This means that two baths interfere, and the periodicity of the total bath is no
   spin systems},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
   {Journal of Magnetic Resonance}\ }\textbf {\bibinfo {volume} {177}},\
   \bibinfo {pages} {93} (\bibinfo {year} {2005})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Schweiger}\ and\ \citenamefont
+  	{Jeschke}(2001)}]{schweiger2001principles}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  		{Schweiger}}\ and\ \bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  		{Jeschke}},\ }\bibfield  {title} {\bibinfo {title} {Principles of pulse electron paramagnetic resonance} }\href@noop
+  {} {\bibfield  {book} {\bibinfo  {book} {Oxford university press}\ }
+  	(\bibinfo {year} {2001})}\BibitemShut {NoStop}%
 \end{thebibliography}%
 
 
