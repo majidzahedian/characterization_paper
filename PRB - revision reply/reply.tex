@@ -82,25 +82,23 @@
 	
 	4. \textcolor{brown}{We thank the referee to point out that this Hamiltonian needs further explanation. We added an Appendix to explain the derivation of this Hamiltonian.} The Hamiltonian conventionally is written in the rotating frame of applied microwave and consist of Electron and nuclear spin Zeeman energy and dipole interaction between them. As it is mentioned in the text, the secular approximation is considered so terms like $S_x, S_y$ do not appear. Traditionally, the nuclear spins' frame are rotated such that $I_y$ term do not appear. This Hamiltonian applied to any two-level system, e.g., this could be any two spin sublevels in Silicon Carbide (S=3/2)\\
 	
-	5. We thank the referee for pointing out labels for subfigures (pdf is corrected but latex does not show). In the revised version of the manuscript we fixed this issue. 
+	5. We thank the referee for pointing out labels for subfigures. In the revised version of the manuscript we fixed this issue. 
 	In Fig. 3, we are discussing 5pESEEM sequence mostly for Electron spin 1/2 system. 
 	We did not include FFT of 5pESEEM sequence for spin 1 system because it works just as good as DD sequence, and does not bring any additional information. 
 	However, we believe, that the Fisher information obtained for spin 1 system in Fig. 3c is good metrics to compare with the result of electron spin 1/2 system in Fig 3d.  \\
 	
-	6. \textcolor{red}{Initial state should be initialised into superposition of two eigenstates, s0,s1, which can be any, right?}
-	\textcolor{brown}{No, the initial state is always one of s0 or s1, with the first pi-half pulse, the superposition is created. Or one can say I know how to generate an initial superposition state, then the first pi-half pulse is not needed.}
-	The initial state for the Ramsey sequence can be any of the two sub-levels of spin system. Indeed, the grey exponential decay is not sufficient to describe spin relaxations as mentioned in the text, but it shows the time scale of the decay. We thank the referee for this point and we decided to remove this exponential decay to avoid confusion. We have added this correction to the main text.
-	\textcolor{blue}{((..initial state is XXX..))}.\\
+	6. The initial state for the Ramsey sequence can be any of the two sub-levels of spin system ($s_0, s_1$ etc). Indeed, the grey exponential decay is not sufficient to describe spin relaxations as mentioned in the text, but it shows the time scale of the decay. We thank the referee for this point and we decided to remove this exponential decay to avoid confusion. We have added this correction to the main text.
 	 
 	7. We thank the referee for pointing out this issue. We added more explanation to the last paragraph in the Appendix B.
 	
 	((...\textcolor{blue}{The blind spot term depends on both $\tau_1$ and $\tau_2$. It means if one resonant frequency is blinded, the other resonant frequency and all the multiple quantum resonances also vanishes. This can be used as a manifestation that which two peaks in the frequency spectrum are originating from the same nuclei. In other words, choosing $\tau$ such that a particular resonant frequency in the spectrum is blinded, the other resonant frequency of the same nuclear spin will also be blinded and both of them disappear from the frequency spectrum together. Moreover, this is very helpful especially in the presence of strongly coupled nuclear spin that suppress other nuclei. By sweeping $\tau_1$ and $\tau_2$, one can go through different bright and blind spots of each nuclear spin, and observe correlations between different peaks.}...))\\
 	
-	8. This equations are valid as long as the condition stated before Eq. 1 are valid. Most importantly secular approximation is crucial, and also the nuclear spin should be spin 1/2 like Carbons. The spin of electron spin is not playing an important role since various allowed microwave transitions can be well separated and pulses resonant with only an effective two level system can be considered.\\
+	8. These equations are valid as long as the condition stated before Eq. 1 are satisfied. Most important is secular approximation and the nuclear spin $I = 1/2$, e.g. $^{13}C$, $^{15}N$ or $^1 H$ . The spin of electron spin is not playing an important role since various allowed microwave transitions can be well separated and pulses resonant with only an effective two level system can be considered.\\
 	
 	9. In this work, we address nuclear spins only with microwave driving of the electron spin as we mentioned in the text:\\
 	\textcolor{brown}{((While double resonance methods hold large promise for nuclear spin spectroscopy, they require additional experimental hardware, and often are not available.))}
-	Applying another radio frequency (RF) driving adds another experimental challenge to the problem and goes beyond the scope of this work. In this case, RF spectroscopy to find and drive individual nuclear spins is required, which can add the required time to image nuclear spins, which was successfully demonstrated in various works for spin 1, 3/2,  \cite{DDRF, ENDOR, SSRV2}. We believe that it will as well work well for spin $S=1/2$, as it probes the transition frequency of the nuclear spin in $m_s=1/2$ or $m_s=-1/2$ subdomains, making it sensitive to the first order of the $A_{zz}$ coupling. Comparison of various RF assisted protocols goes beyond the scope of the current work and requires further investigation.\\
+	Applying another radio frequency (RF) driving adds another experimental challenge to the problem and goes beyond the scope of this work. In this case, RF spectroscopy to find and drive individual nuclear spins is required, which can add the required time to image nuclear spins, which was successfully demonstrated in various works for spin 1, 3/2,  
+(Bradley, C. E., et al.  \textit{PRX}  031045 (2019), Zaiser, S. et al. \textit{Nat. Comm.} 12279 (2016), Hesselmeier E. et al. \textit{PRL} 180804 (2024)). We believe that it will as well work well for spin $S=1/2$, as it probes the transition frequency of the nuclear spin in $m_s=1/2$ or $m_s=-1/2$ subdomains, making it sensitive to the first order of the $A_{zz}$ coupling. Comparison of various RF assisted protocols goes beyond the scope of the current work and requires further investigation.\\
 
 	\color{red} \section{Report of the Second Referee}
 	The authors propose a blueprint for efficient nuclear spin
@@ -132,7 +130,7 @@
 	
 	\color{black} \section*{Reply to the Second Referee}
 	We appreciate the comments made by the referee. We clarify each point as follows:\\
-	1. We thank the referee for pointing out labels for subfigures (pdf is corrected but latex does not show). We fixed this issue. Fig. 5 does not require subfigure labelling. We provided more explanation regarding the hyperfine coupling parameters in the text:
+	1. We thank the referee for pointing out labels for subfigures. We fixed this issue. Fig. 5 does not require subfigure labelling. We provided more explanation regarding the hyperfine coupling parameters in the text:
 	((... \textcolor{blue}{the summation is over $\tau$, the pulse timing used in the sequence, and $A$ is the array including all hyperfine coupling parameters. For the considered nuclear spin register, $A$ includes 56 hyperfine coupling parameters, the first 23 parameters are $A_{zz}$ of different nuclear spins and the second 23 parameters are $A_{zx}$ respectively, resulting in the Fisher information as a 56 by 56 Matrix.} ...)) \\   
 	
 	2. Indeed, the grey exponential decay is not sufficient to describe spin relaxations as mentioned in the text, but it shows the time scale of the decay. We thank the referee for this point and we decided to remove this exponential decay to avoid confusion.\\
