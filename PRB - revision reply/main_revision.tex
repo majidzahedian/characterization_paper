@@ -52,7 +52,7 @@ superscriptaddress,
 \usepackage{soul}
 %\usepackage[mathlines]{lineno}% Enable numbering of text and display math
 %\linenumbers\relax % Commence numbering lines
-\newcommand{\vvv}[1]{\textcolor{blue}{#1}}
+\newcommand{\vvv}[1]{\textcolor{black}{#1}}
 \newcommand{\kb}[2]{\vert #1 \rangle \langle #2 \vert}
 \newcommand{\caver}[1]{\overline{#1}}
 \setlength{\jot}{8pt}
@@ -159,7 +159,7 @@ Thus, in this work, we investigate the limits of electron spin driven schemes, i
 We consider a central spin system of \textit{non-interacting} nuclear spins $I=1/2$ coupled to a central electron spin $\boldsymbol{S}$.
 The central electron spin is manipulated resonantly with microwave pulses, which transfer the population between the two sublevels denoted as $m_s=s_0$ and $m_s = s_1$.
 These two spin sublevels are separated due to the Zeeman effect and/or zero-field splitting, forming a two-level subsystem with an energy splitting of $\omega_a$.
-The Hamiltonian of the system in the secular approximation and in the rotating frame of the applied microwave $\omega_{mw}$ can be written as \textcolor{blue}{(derivation in \ref{app:Hamiltonian})}:
+The Hamiltonian of the system in the secular approximation and in the rotating frame of the applied microwave $\omega_{mw}$ can be written as \textcolor{black}{(derivation in \ref{app:Hamiltonian})}:
 \begin{align}
 	H = \Delta S_z + \sum_k (\omega_L^{(k)}  + A_{zz}^{(k)} S_z) I_z^{(k)} + A_{zx}^{(k)} S_z I_x^{(k)}
 	\label{eq:H}
@@ -175,7 +175,8 @@ The Ramsey signal can be obtained as follows:
 	(\vec{n_0}\cdot \vec{n_1})\sin(\frac{\omega_0 \tau}{2}) \sin(\frac{\omega_1 \tau}{2}) \Big]^{(j)}
 	%\textcolor{gray}{e^{-(\frac{\tau}{T_2^\ast})^m}}
 \end{gather}	
-\st{The exponential decay is introduced to note the Ramsey signal decays with the electron spin $T_2^\ast$ since the formalism does not account for any relaxation processes.}  \textcolor{blue}{We note the expressions do not account for any relaxation processes.} The Ramsey sequence is sensitive to detuning since the electron spin is not refocused \textcolor{blue}{and it decays with the electron spin $T_2^\ast$}; however, it is possible to sense nuclear spins with vanishing perpendicular hyperfine coupling.\\
+%\st{The exponential decay is introduced to note the Ramsey signal decays with the electron spin $T_2^\ast$ since the formalism does not account for any relaxation processes.} 
+ \textcolor{black}{We note the expressions do not account for any relaxation processes.} The Ramsey sequence is sensitive to detuning since the electron spin is not refocused \textcolor{black}{and it decays with the electron spin $T_2^\ast$}; however, it is possible to sense nuclear spins with vanishing perpendicular hyperfine coupling.\\
 
 To extend the relaxation time and access more nuclei, one can insert a $\pi$ pulse between the Ramsey sequence, creating a Hahn echo sequence, and obtain the following signal:
 \begin{gather}
@@ -200,7 +201,7 @@ Where
 \begin{gather}
 	\theta=  \arccos\Big[\cos(\omega_0 \tau) \cos(\omega_1 \tau)- \vec{n}_0 \cdot \vec{n}_1 sin(\omega_0 \tau) \sin(\omega_1 \tau) \Big]
 \end{gather}
-Where $\vec{n}_0 \cdot \vec{n}_1 = \frac{\omega_L^2+(s_0+s_1)A_{zz}+s_0 s_1 (A_{zz}^2+A_{zx}^2)}{\omega_0 \omega_1}$, \textcolor{blue}{which is the inner product of precession axes of a nuclear spin condition on the electron spin sublevel. This expression indicates the advantage of using DD sequence for sublevels where either $s_0$ or $s_1$ is zero, only first order parallel hyperfine coupling $\frac{A_{zz}}{\omega_L}$ play a role. On the other hand, in spin-1/2 systems ($s_0=-\frac{1}{2}$ and $s_1=\frac{1}{2}$), the first order perturbation correction with respect to hyperfine coupling vanishes and only second order perturbation term with respect to parallel $(\frac{A_{zz}}{\omega_L})^2$  and perpendicular coupling $(\frac{A_{zx}}{\omega_L})^2$ remain present. This indicates weak sensitivity of DD sequence on different nuclear spins}.
+Where $\vec{n}_0 \cdot \vec{n}_1 = \frac{\omega_L^2+(s_0+s_1)A_{zz}+s_0 s_1 (A_{zz}^2+A_{zx}^2)}{\omega_0 \omega_1}$, \textcolor{black}{which is the inner product of precession axes of a nuclear spin condition on the electron spin sublevel. This expression indicates the advantage of using DD sequence for sublevels where either $s_0$ or $s_1$ is zero, only first order parallel hyperfine coupling $\frac{A_{zz}}{\omega_L}$ play a role. On the other hand, in spin-1/2 systems ($s_0=-\frac{1}{2}$ and $s_1=\frac{1}{2}$), the first order perturbation correction with respect to hyperfine coupling vanishes and only second order perturbation term with respect to parallel $(\frac{A_{zz}}{\omega_L})^2$  and perpendicular coupling $(\frac{A_{zx}}{\omega_L})^2$ remain present. This indicates weak sensitivity of DD sequence on different nuclear spins}.
 At this point, it should be clear that the number of pulses can be used as an additional parameter to modify the modulation depth of each nuclear spin.
 A detailed investigation of the obtained DD signal reveals that by sweeping the time interval between pulses, an exponential decay with the rate of $1/T_2$ is observed, except for some resonance times where the electron spin becomes entangled with a particular nuclear spin, resulting in a sharp drop in the signal.
 This resonance time can be obtained assuming $\omega_L \gg A_{zz}, A_{zx}$ is satisfied: 
@@ -235,14 +236,14 @@ Hence, the resonance signal depends on the second order of the perpendicular hyp
 \begin{figure*}[htbp]
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{figure_2.pdf}
-		\caption{Simulated FFT of ESEEM signal with a zoom into weakly coupled nuclear spins for the register reported \cite{abobeih2019atomic} consist of 23 nuclear spins, assuming the electron spin $S=1/2$ system. b. Enhancing the sensitivity to weakly coupled spins by increasing number of $\pi$-pulses to $N=72$ pulses in each entangling period. $\tau$ is set to the Larmor bright spot. Simulated  \textcolor{blue}{5pESEEM} Fisher Information 56 by 56 matrix for the case of the electron spin c. $S=1$ d. $S=1/2$ system. The first 23 hyperfine parameters are $A_{zz}$ and the second 23 parameters are $A_{zx}$ of the nuclear spin register. \textcolor{blue}{It indicates the covariance between two parameters. The main diagonal appears as each parameter is correlated with itself. The side-diagonals indicate the two hyperfine parameters that belong to the same nuclei.}}
+		\caption{Simulated FFT of ESEEM signal with a zoom into weakly coupled nuclear spins for the register reported \cite{abobeih2019atomic} consist of 23 nuclear spins, assuming the electron spin $S=1/2$ system. b. Enhancing the sensitivity to weakly coupled spins by increasing number of $\pi$-pulses to $N=72$ pulses in each entangling period. $\tau$ is set to the Larmor bright spot. Simulated  \textcolor{black}{5pESEEM} Fisher Information 56 by 56 matrix for the case of the electron spin c. $S=1$ d. $S=1/2$ system. The first 23 hyperfine parameters are $A_{zz}$ and the second 23 parameters are $A_{zx}$ of the nuclear spin register. \textcolor{black}{It indicates the covariance between two parameters. The main diagonal appears as each parameter is correlated with itself. The side-diagonals indicate the two hyperfine parameters that belong to the same nuclei.}}
 		\label{fig:ddeseem}
 	\end{center}
 \end{figure*}
 
 
 In this work, we consider the 23-nuclear spin cluster characterized previously \cite{abobeih2019atomic} as a realistic case for our comparison.
-\textcolor{blue}{Each nuclear spin is identified with two hyperfine parameters $A_{zz}$ and $A_{zx}$, which shows coupling to the central electron spin. Hence, characterizing this 23-nuclear spins requires identifying 56 hyperfine coupling parameters.}
+\textcolor{black}{Each nuclear spin is identified with two hyperfine parameters $A_{zz}$ and $A_{zx}$, which shows coupling to the central electron spin. Hence, characterizing this 23-nuclear spins requires identifying 56 hyperfine coupling parameters.}
 First, we apply the Dynamical Decoupling (DD) sequence to this nuclear spin register and visualize the obtained results. Fig \ref{fig:3} compares the DD signal for the same nuclear spin register but different defects in diamond.
 An intuitive description of the sensitivity of a sequence to the variation of hyperfine coupling could be estimated by considering the width and sensitivity of the position of the resonances.
 First, we consider the case of an NV center in diamond. The width of a dip is $\delta \tau = \frac{A_{zx}}{\omega_L^2}$. Taking the derivative of the resonance time, we define the sensitivity of the longitudinal hyperfine coupling, using Eq. \ref{eq:resonance} to simplify:
@@ -270,7 +271,7 @@ The Fisher Information Matrix is estimated for the probability to measure state 
 \begin{equation}
 	F_{ij}(\textbf{A})=\sum_\tau \frac{\partial p(0, \tau, \textbf{A})}{\partial A_i}\frac{\partial p(0, \tau, \textbf{A})}{ \partial A_j} \frac{1}{p (1-p)}.
 \end{equation}
-\textcolor{blue}{the summation is over $\tau$, the pulse timing used in the sequence, and $A$ is the array including all hyperfine coupling parameters. For the considered nuclear spin register, $A$ includes 56 hyperfine coupling parameters, the first 23 parameters are $A_{zz}$ of different nuclear spins and the second 23 parameters are $A_{zx}$ respectively, resulting in the Fisher information as a 56 by 56 Matrix. Fig. \ref{fig:3}c,d visualize Fisher Information matrix element for DD sequence in spin 1 and 1/2 systems.}
+\textcolor{black}{the summation is over $\tau$, the pulse timing used in the sequence, and $A$ is the array including all hyperfine coupling parameters. For the considered nuclear spin register, $A$ includes 56 hyperfine coupling parameters, the first 23 parameters are $A_{zz}$ of different nuclear spins and the second 23 parameters are $A_{zx}$ respectively, resulting in the Fisher information as a 56 by 56 Matrix. Fig. \ref{fig:3}c,d visualize Fisher Information matrix element for DD sequence in spin 1 and 1/2 systems.}
 For the typical case of an NV center with $S=1$, since all the nuclear spin resonances are clearly resolved, the Fisher Information Matrix takes a diagonal shape, revealing low covariances between the various nuclear spin resonances.
 There is crosstalk between $A_{zz}$ and $A_{zx}$ for a nuclear spin, as the position of the peaks depends on both values.
 The Fisher Information provides a bound for the precision of parameter estimation, known as the Cramér–Rao bound: 
@@ -450,14 +451,14 @@ Another consequence of the product rule is the cross-suppression effect, where t
 	\approx \sum_{j=1}^n \Big[-8Bk\cos^4(\eta) \cos(\omega_\alpha T + \phi_{\alpha_+}+ \phi_{\beta_+}) \Big]^{(j)}
 \end{gather}
 
-The blind spot term, B, shows that how this sequence can be engineered to increase or reduce the signal amplitude of one nuclear spin from the spectrum. \st{The bright and blind spots of a frequency in the spectrum are as follows} \textcolor{blue}{The Eq. \ref{eq:BS} suggests the bright and blind spots of a frequency can be obtained as follows}:
+The blind spot term, B, shows that how this sequence can be engineered to increase or reduce the signal amplitude of one nuclear spin from the spectrum. \st{The bright and blind spots of a frequency in the spectrum are as follows} \textcolor{black}{The Eq. \ref{eq:BS} suggests the bright and blind spots of a frequency can be obtained as follows}:
 \begin{align}
 	\text{Blind Spots:	} \tau = even \,\, \frac{\pi}{\omega}\\
 	\text{Bright Spots:	} \tau = odd \,\, \frac{\pi}{\omega}
 \end{align}
-\st{The blind spots does not depend only on one frequency but on the nuclear spin. It means if one resonant frequency is blinded, the other resonant frequency and all the multiple quantum resonances also vanishes. This can be used as a manifestation that which two peaks are from one nuclei. Also, This is very helpful especially in the presence of strongly coupled nuclear spin that suppress other nuclei. By sweeping $\tau_1$ and $\tau_2$, one can go through different bright and blind spots of each nuclear spin, observe which two peaks are correlated.}
+%\st{The blind spots does not depend only on one frequency but on the nuclear spin. It means if one resonant frequency is blinded, the other resonant frequency and all the multiple quantum resonances also vanishes. This can be used as a manifestation that which two peaks are from one nuclei. Also, This is very helpful especially in the presence of strongly coupled nuclear spin that suppress other nuclei. By sweeping $\tau_1$ and $\tau_2$, one can go through different bright and blind spots of each nuclear spin, observe which two peaks are correlated.}
 
-\textcolor{blue}{The blind spot term depends on both $\tau_1$ and $\tau_2$. It means if one resonant frequency is blinded, the other resonant frequency and all the multiple quantum resonances also vanishes. This can be used as a manifestation that which two peaks in the frequency spectrum are originating from the same nuclei. In other words, choosing $\tau$ such that a particular resonant frequency in the spectrum is blinded, the other resonant frequency of the same nuclear spin will also be blinded and both of them disappear from the frequency spectrum together. Moreover, this is very helpful especially in the presence of strongly coupled nuclear spin that suppress other nuclei. By sweeping $\tau_1$ and $\tau_2$, one can go through different bright and blind spots of each nuclear spin, and observe correlations between different peaks.}
+\textcolor{black}{The blind spot term depends on both $\tau_1$ and $\tau_2$. It means if one resonant frequency is blinded, the other resonant frequency and all the multiple quantum resonances also vanishes. This can be used as a manifestation that which two peaks in the frequency spectrum are originating from the same nuclei. In other words, choosing $\tau$ such that a particular resonant frequency in the spectrum is blinded, the other resonant frequency of the same nuclear spin will also be blinded and both of them disappear from the frequency spectrum together. Moreover, this is very helpful especially in the presence of strongly coupled nuclear spin that suppress other nuclei. By sweeping $\tau_1$ and $\tau_2$, one can go through different bright and blind spots of each nuclear spin, and observe correlations between different peaks.}
 
 
 \section{DD analysis for bispecies systems}
@@ -609,6 +610,7 @@ This means that two baths interfere, and the periodicity of the total bath is no
   {\bibfield  {journal} {\bibinfo  {journal} {npj Quantum Information}\
   }\textbf {\bibinfo {volume} {7}},\ \bibinfo {pages} {124} (\bibinfo {year}
   {2021})}\BibitemShut {NoStop}%
+  %7
 \bibitem [{\citenamefont {Hesselmeier}\ \emph {et~al.}(2023)\citenamefont
   {Hesselmeier}, \citenamefont {Kuna}, \citenamefont {Tak{\'a}cs},
   \citenamefont {Iv{\'a}dy}, \citenamefont {Knolle}, \citenamefont {Ghezellou},
@@ -629,6 +631,7 @@ This means that two baths interfere, and the periodicity of the total bath is no
   silicon carbide},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
   {arXiv preprint arXiv:2310.15557}\ } (\bibinfo {year} {2023})}\BibitemShut
   {NoStop}%
+%8
 \bibitem [{\citenamefont {Hesselmeier}\ \emph {et~al.}(2024)\citenamefont
   {Hesselmeier}, \citenamefont {Kuna}, \citenamefont {Knolle}, \citenamefont
   {Kaiser}, \citenamefont {Son}, \citenamefont {Ghezellou}, \citenamefont
@@ -645,8 +648,8 @@ This means that two baths interfere, and the periodicity of the total bath is no
   {V.}~\bibnamefont {Vorobyov}},\ and\ \bibinfo {author} {\bibfnamefont
   {J.}~\bibnamefont {Wrachtrup}},\ }\bibfield  {title} {\bibinfo {title} {High
   fidelity optical readout of a nuclear spin qubit in silicon carbide},\
-  }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {arXiv preprint
-  arXiv:2401.04465}\ } (\bibinfo {year} {2024})}\BibitemShut {NoStop}%
+  }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Physical Review Letters}\ } (\bibinfo {year} {2024})}\BibitemShut {NoStop}%
+%9
 \bibitem [{\citenamefont {Reiner}\ \emph {et~al.}(2024)\citenamefont {Reiner},
   \citenamefont {Chung}, \citenamefont {Misha}, \citenamefont {Lehner},
   \citenamefont {Moehle}, \citenamefont {Poulos}, \citenamefont {Monir},
@@ -667,6 +670,7 @@ This means that two baths interfere, and the periodicity of the total bath is no
   spins in a four-qubit register},\ }\href@noop {} {\bibfield  {journal}
   {\bibinfo  {journal} {Nature Nanotechnology}\ ,\ \bibinfo {pages} {1}}
   (\bibinfo {year} {2024})}\BibitemShut {NoStop}%
+%10
 \bibitem [{\citenamefont {Vorobyov}\ \emph {et~al.}(2023)\citenamefont
   {Vorobyov}, \citenamefont {Meinel}, \citenamefont {Sumiya}, \citenamefont
   {Onoda}, \citenamefont {Isoya}, \citenamefont {Gulinsky},\ and\ \citenamefont
